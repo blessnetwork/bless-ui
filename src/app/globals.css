@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	@apply font-sans;
 }
 
 @layer utilities {
@@ -12,48 +12,20 @@ body {
 	}
 }
 
-@font-face {
-	font-family: 'TelkaTRIAL-Bold';
-	src: url('./fonts/TelkaTRIAL-Bold.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Medium';
-	src: url('./fonts/TelkaTRIAL-Medium.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Regular';
-	src: url('./fonts/TelkaTRIAL-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Light';
-	src: url('./fonts/TelkaTRIAL-Light.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
 .font-bold {
-	font-family: 'TelkaTRIAL-Bold', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .font-medium {
-	font-family: 'TelkaTRIAL-Medium', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .font-regular {
-	font-family: 'TelkaTRIAL-Regular', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 .font-light {
-	font-family: 'TelkaTRIAL-Light', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 @layer base {
