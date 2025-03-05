@@ -117,7 +117,7 @@ export default function SideNav() {
 			{/* Footer */}
 			<div className="mt-auto">
 				<div className="h-[1px] bg-[#DEDEDE] -mx-4"></div>
-				<ul className="flex-1">
+				<ul className="flex-1 pb-4">
 					{menuItemsFooter.map((item, index) => {
 						const isActive = active === item.label
 						return (
