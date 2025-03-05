@@ -140,7 +140,7 @@ export default function SideNav() {
             <li
               key={index}
               onClick={() => setActive(item.label)}
-              className={`group px-3 py-1.5 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center max-h-[40px] ${
+              className={`group px-3 py-1.5 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center max-h-[40px] min-h-[40px] ${
                 isActive
                   ? '!bg-[#FFFFFF] !text-black shadow-md'
                   : 'text-[#A0A2A0] hover:text-black hover:bg-[#E5E5E5]'
@@ -177,7 +177,7 @@ export default function SideNav() {
               <li
                 key={index}
                 onClick={() => setActive(item.label)}
-                className={`group px-3 py-2 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center ${
+                className={`group px-3 py-2 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center  max-h-[40px] min-h-[40px] ${
                   isActive
                     ? '!bg-[#FFFFFF] !text-black shadow-md'
                     : 'text-[#A0A2A0] hover:text-black hover:bg-[#E5E5E5]'
