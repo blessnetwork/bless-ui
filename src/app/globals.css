@@ -3,29 +3,13 @@
 @tailwind utilities;
 
 body {
-	@apply font-sans;
+	font-family: var(--font-inter), sans-serif;
 }
 
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
 	}
-}
-
-.font-bold {
-	font-family: 'Inter', sans-serif;
-}
-
-.font-medium {
-	font-family: 'Inter', sans-serif;
-}
-
-.font-regular {
-	font-family: 'Inter', sans-serif;
-}
-
-.font-light {
-	font-family: 'Inter', sans-serif;
 }
 
 @layer base {

@@ -17,7 +17,7 @@ export default function ExamplesPage() {
 	return (
 		<div className="p-12">
 			<section>
-        <p className="text-4xl font-medium">Card</p>
+				<p className="text-4xl font-medium">Card</p>
 				<Highlight className="typescript">
 					{`
   import {
@@ -57,7 +57,7 @@ export default function ExamplesPage() {
 			</section>
 
 			<section>
-        <p className="text-4xl font-medium">Input</p>
+				<p className="text-4xl font-medium">Input</p>
 				<Highlight className="typescript">
 					{`
   import { Input } from '@/components/ui'
@@ -74,18 +74,14 @@ export default function ExamplesPage() {
   }    
   `}
 				</Highlight>
-        
-        <br />
 
-        <Input type="email" placeholder="Email" />
-        <Input type="text" placeholder="Text" />
-        <Input type="number" placeholder="Number" />
-        <Input type="search" placeholder="Search" />
+				<br />
 
+				<Input type="email" placeholder="Email" />
+				<Input type="text" placeholder="Text" />
+				<Input type="number" placeholder="Number" />
+				<Input type="search" placeholder="Search" />
 			</section>
-
-
-
 		</div>
 	)
 }

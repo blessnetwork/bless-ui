@@ -19,7 +19,7 @@ export default function GetStartedPage() {
 					<p className="text-2xl text-charcoal px-4">Full Name</p>
 					<Input className="absolute bottom-0" placeholder="Email" />
 					<Link className="absolute right-10 bottom-6" href="/">
-						SIGN UP
+						SIGNUP
 					</Link>
 				</div>
 			</Card>
