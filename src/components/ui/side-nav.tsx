@@ -114,7 +114,7 @@ export default function SideNav() {
 				})}
 			</ul>
 
-			{/* Footer (Moved to the Bottom) */}
+			{/* Footer */}
 			<div className="mt-auto">
 				<div className="h-[1px] bg-[#DEDEDE] -mx-4"></div>
 				<ul className="flex-1">
