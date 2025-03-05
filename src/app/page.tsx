@@ -9,6 +9,7 @@ export default function LandingPage() {
 				<div className="text-3xl">Bless UI</div>
 				<div className="text-lg mt-0">React component library</div>
 				<Link href="/get-started">Get Started</Link>
+				<Link href="/side-nav">Side Nav</Link>
 			</main>
 		</div>
 	)
