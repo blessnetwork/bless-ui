@@ -67,15 +67,15 @@ export default function SideNav() {
 
 	return (
 		<nav
-			className={`shadow-md px-4 h-screen flex flex-col duration-500 bg-[#F0F0F0] text-black ${
+			className={`flex h-screen flex-col bg-[#F0F0F0] px-4 text-black shadow-md duration-500 ${
 				open ? 'w-[260px]' : 'w-[72px]'
 			}`}
 		>
 			{/* Header */}
-			<div className="px-3 py-2 h-14 flex justify-between items-center">
+			<div className="flex h-14 items-center justify-between px-3 py-2">
 				{open && <LogoIcon />}
 				<MenuIcon
-					className={`text-[#A0A2A0] hover:text-black duration-100 cursor-pointer ${
+					className={`cursor-pointer text-[#A0A2A0] duration-100 hover:text-black ${
 						!open && 'rotate-180'
 					}`}
 					onClick={() => setOpen(!open)}
@@ -84,17 +84,17 @@ export default function SideNav() {
 
 			{/* Body */}
 			<ul className="flex-1">
-				<div className="h-[1px] bg-[#DEDEDE] mb-4 -mx-4"></div>
+				<div className="-mx-4 mb-4 h-[1px] bg-[#DEDEDE]"></div>
 				{menuItems.map((item, index) => {
 					const isActive = active === item.label
 					return (
 						<li
 							key={index}
 							onClick={() => setActive(item.label)}
-							className={`group px-3 py-1.5 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center max-h-[40px] min-h-[40px] ${
+							className={`group my-2 flex max-h-[40px] min-h-[40px] cursor-pointer items-center gap-2 rounded-lg px-3 py-1.5 duration-100 ${
 								isActive
 									? '!bg-[#FFFFFF] !text-black shadow-md'
-									: 'text-[#A0A2A0] hover:text-black hover:bg-[#E5E5E5]'
+									: 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
 							}`}
 						>
 							{!open ? (
@@ -104,7 +104,7 @@ export default function SideNav() {
 							) : (
 								<>
 									<div className="mr-1">{item.icon(isActive)}</div>
-									<p className={`${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>
+									<p className={`${!open && 'w-0 translate-x-24'} overflow-hidden duration-500`}>
 										{item.label}
 									</p>
 								</>
@@ -116,7 +116,7 @@ export default function SideNav() {
 
 			{/* Footer */}
 			<div className="mt-auto">
-				<div className="h-[1px] bg-[#DEDEDE] -mx-4"></div>
+				<div className="-mx-4 h-[1px] bg-[#DEDEDE]"></div>
 				<ul className="flex-1 pb-4">
 					{menuItemsFooter.map((item, index) => {
 						const isActive = active === item.label
@@ -124,10 +124,10 @@ export default function SideNav() {
 							<li
 								key={index}
 								onClick={() => setActive(item.label)}
-								className={`group px-3 py-2 my-2 rounded-lg duration-100 cursor-pointer flex gap-2 items-center  max-h-[40px] min-h-[40px] ${
+								className={`group my-2 flex max-h-[40px] min-h-[40px] cursor-pointer items-center gap-2 rounded-lg px-3 py-2 duration-100 ${
 									isActive
 										? '!bg-[#FFFFFF] !text-black shadow-md'
-										: 'text-[#A0A2A0] hover:text-black hover:bg-[#E5E5E5]'
+										: 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
 								}`}
 							>
 								{!open ? (
@@ -137,7 +137,7 @@ export default function SideNav() {
 								) : (
 									<>
 										<div className="mr-1">{item.icon(isActive)}</div>
-										<p className={`${!open && 'w-0 translate-x-24'} duration-500 overflow-hidden`}>
+										<p className={`${!open && 'w-0 translate-x-24'} overflow-hidden duration-500`}>
 											{item.label}
 										</p>
 									</>
