@@ -14,7 +14,6 @@
 		"@gem-mine/docsify-react-live": "^1.7.1",
 		"@highlightjs/cdn-assets": "^11.10.0",
 		"@stackblitz/sdk": "^1.11.0",
-		"@tailwindcss/typography": "^0.5.16",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
 		"highlight.js": "^11.10.0",
@@ -25,11 +24,11 @@
 		"react": "^18",
 		"react-dom": "^18",
 		"react-highlight": "^0.15.0",
-		"react-icons": "^5.5.0",
-		"tailwind-merge": "^2.5.4",
-		"tailwindcss-animate": "^1.0.7"
+		"react-icons": "^5.5.0"
 	},
 	"devDependencies": {
+		"@tailwindcss/container-queries": "^0.1.1",
+		"@tailwindcss/typography": "^0.5.16",
 		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/node": "^20",
 		"@types/react": "^18",
@@ -39,7 +38,9 @@
 		"postcss": "^8",
 		"prettier": "^3.5.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
+		"tailwind-merge": "^3.0.2",
 		"tailwindcss": "^3.4.1",
+		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5",
 		"yarn": "^1.22.22"
 	}
