@@ -39,7 +39,6 @@ export default function SideNav() {
 	const [hidden, setHidden] = useState(false)
 	const [active, setActive] = useState('Home')
 	const [isMobile, setIsMobile] = useState(false)
-	const [isTablet, setIsTablet] = useState(false)
 
 	// Handle responsive behavior
 	useEffect(() => {
@@ -49,17 +48,14 @@ export default function SideNav() {
 			if (width <= 430) {
 				setHidden(true) // Hide sidebar initially on iPhone
 				setIsMobile(true)
-				setIsTablet(false)
 			} else if (width <= 1024) {
 				setHidden(false)
 				setOpen(false) // Collapse sidebar on iPad
 				setIsMobile(false)
-				setIsTablet(true) // iPad mode
 			} else {
 				setHidden(false)
 				setOpen(true) // Expand sidebar on desktop
 				setIsMobile(false)
-				setIsTablet(false)
 			}
 		}
 
@@ -124,8 +120,16 @@ export default function SideNav() {
 										isActive ? '!bg-[#FFFFFF] !text-black shadow-md' : 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
 									}`}
 								>
-									<div className="mr-1">{item.icon(isActive)}</div>
-									{!isTablet && <p>{item.label}</p>} {/* Hide labels on iPad */}
+									{open || isMobile ? (
+										<>
+											<div className="mr-1">{item.icon(isActive)}</div>
+											<p>{item.label}</p>
+										</>
+									) : (
+										<Popover label={item.label}>
+											<div className="mr-1">{item.icon(isActive)}</div>
+										</Popover>
+									)}
 								</li>
 							)
 						})}
@@ -145,8 +149,16 @@ export default function SideNav() {
 											isActive ? '!bg-[#FFFFFF] !text-black shadow-md' : 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
 										}`}
 									>
-										<div className="mr-1">{item.icon(isActive)}</div>
-										{!isTablet && <p>{item.label}</p>} {/* Hide labels on iPad */}
+										{open || isMobile ? (
+											<>
+												<div className="mr-1">{item.icon(isActive)}</div>
+												<p>{item.label}</p>
+											</>
+										) : (
+											<Popover label={item.label}>
+												<div className="mr-1">{item.icon(isActive)}</div>
+											</Popover>
+										)}
 									</li>
 								)
 							})}
