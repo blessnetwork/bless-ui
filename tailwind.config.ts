@@ -1,3 +1,4 @@
+import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
 import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
@@ -5,21 +6,26 @@ const config: Config = {
 	plugins: [
 		require('tailwindcss-animate'),
 		require('@tailwindcss/typography'),
-		require('@tailwindcss/container-queries')
+		require('@tailwindcss/container-queries'),
+		fluid
 	],
 	darkMode: ['class'],
-	content: [
-		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
-		'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
-	],
+	content: {
+		files: [
+			'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+			'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+			'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
+		],
+		extract
+	},
 	theme: {
+		screens, // Fluid Tailwind's default screens, in `rem`
+		fontSize, // Fluid Tailwind's default font sizes, in `rem` (including line heights)
 		extend: {
 			fontFamily: {
 				sans: ['var(--font-inter)', ...fontFamily.sans]
 			},
 			colors: {
-				temp_white: '#FAF7EE',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -76,9 +82,10 @@ const config: Config = {
 			}
 		},
 		colors: {
+			main: '#FAFAFA',
 			green: '#C9FCC0',
 			'light-gray': '#CCCAC0',
-			grey: '#F2F2F2',
+			gray: '#F2F2F2',
 			slate: '#F5F5F5',
 			cement: '#AEB3B7',
 			charcoal: '#292D2A',

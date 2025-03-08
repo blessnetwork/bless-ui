@@ -5,7 +5,7 @@ import * as React from 'react'
 
 export default function GetStartedPage() {
 	return (
-		<div className="flex-1 items-center justify-items-center bg-slate p-12">
+		<div className="flex-1 items-center justify-items-center p-12">
 			<Card className="h-[264px] w-[600px]">
 				<p className="px-4 text-2xl text-charcoal">
 					Contribute your unused computer power, earn rewards effortlessly.{' '}
