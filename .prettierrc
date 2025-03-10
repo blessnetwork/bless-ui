@@ -4,8 +4,8 @@
 	"trailingComma": "none",
 	"semi": false,
 	"printWidth": 100,
-	"importOrder": ["^@blockless/(.*)$", "^[./]"],
 	"importOrderSeparation": true,
 	"importOrderSortSpecifiers": true,
+	"importOrder": ["^@blockless/(.*)$", "^[./]"],
 	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
 }

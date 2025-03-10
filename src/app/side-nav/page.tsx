@@ -12,7 +12,7 @@ import {
 	StakingIcon
 } from '@/components/ui/icons'
 import SideNav from '@/components/ui/side-nav'
-import React from 'react'
+import React, { useState } from 'react'
 
 const iconClasses = (isActive: boolean) =>
 	`w-[18px] h-[18px] text-[13px] ${
@@ -70,11 +70,20 @@ const menuItemsFooter = [
 	}
 ]
 
-export default function SideNavPage() {
+export default function Page() {
+	const [open, setOpen] = useState(true)
+
 	return (
 		<div className="flex">
-			<SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} />
-			<main className="flex-1 p-6">
+			<SideNav
+				menuItems={menuItems}
+				menuItemsFooter={menuItemsFooter}
+				open={open}
+				setOpen={setOpen}
+			/>
+			<main
+				className={`flex-1 p-6 transition-all duration-300 ${open ? 'ml-[260px]' : 'ml-[72px]'}`}
+			>
 				<h1 className="text-2xl font-bold">Dashboard</h1>
 			</main>
 		</div>

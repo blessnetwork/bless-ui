@@ -1,15 +1,6 @@
 import {
-	AirdropsIcon,
-	DocumentationIcon,
-	HomeIcon,
 	LogoIcon,
-	LogoutIcon,
 	MenuIcon,
-	MyNodesIcon,
-	OrchestrationNodeIcon,
-	ReferralsIcon,
-	SettingsIcon,
-	StakingIcon
 } from '@/components/ui/icons'
 import Popover from '@/components/ui/popover'
 import React, { useState, useEffect } from 'react'
@@ -29,10 +20,11 @@ interface MenuItem {
 interface SideNavProps {
 	menuItems: MenuItem[];
 	menuItemsFooter: MenuItem[];
+	open: boolean;
+	setOpen: (open: boolean) => void;
 }
 
-export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
-	const [open, setOpen] = useState(true)
+export default function SideNav({ menuItems, menuItemsFooter, open, setOpen }: SideNavProps) {
 	const [hidden, setHidden] = useState(false)
 	const [active, setActive] = useState('Home')
 	const [isMobile, setIsMobile] = useState(false)
@@ -47,11 +39,9 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 				setIsMobile(true)
 			} else if (width <= 1024) {
 				setHidden(false)
-				setOpen(false) // Collapse sidebar on iPad
 				setIsMobile(false)
 			} else {
 				setHidden(false)
-				setOpen(true) // Expand sidebar on desktop
 				setIsMobile(false)
 			}
 		}
@@ -62,87 +52,38 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 		return () => window.removeEventListener('resize', handleResize)
 	}, [])
 
-	// Toggle sidebar on mobile (iPhone only)
-	const toggleMobileNav = () => {
-		setHidden(!hidden)
-	}
-
 	return (
-		<>
-			{/* Mobile Header (Only on iPhone) */}
-			{isMobile && (
-				<header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-[#F0F0F0] px-4 py-3 shadow-md">
-					<LogoIcon />
-					<MenuIcon
-						className="cursor-pointer text-[#A0A2A0] duration-100 hover:text-black"
-						onClick={toggleMobileNav}
-					/>
-				</header>
-			)}
+		<nav
+			className={`fixed top-0 left-0 h-screen flex flex-col bg-[#F0F0F0] px-4 text-black shadow-md duration-300 ${
+				isMobile ? 'w-full z-50' : open ? 'w-[260px]' : 'w-[72px]'
+			}`}
+		>
+			{/* Header */}
+			<div className="flex h-14 items-center justify-between px-3 py-2">
+				{open && <LogoIcon />}
+				<MenuIcon
+					className={`cursor-pointer text-[#A0A2A0] duration-100 hover:text-black ${!open && 'rotate-180'}`}
+					onClick={() => setOpen(!open)}
+				/>
+			</div>
 
-			{/* Background Overlay (iPhone Only) */}
-			{isMobile && !hidden && (
-				<div
-					className="fixed inset-0 bg-black/50 z-40"
-					onClick={toggleMobileNav} // Close sidebar when clicking outside
-				></div>
-			)}
-
-			{/* Sidebar */}
-			{!hidden && (
-				<nav
-					className={`fixed top-0 left-0 h-screen flex flex-col bg-[#F0F0F0] px-4 text-black shadow-md duration-300 ${
-						isMobile ? 'w-full z-50' : open ? 'w-[260px]' : 'w-[72px]'
-					}`}
-				>
-					{/* Header */}
-					<div className="flex h-14 items-center justify-between px-3 py-2">
-						{open && <LogoIcon />}
-						<MenuIcon
-							className={`cursor-pointer text-[#A0A2A0] duration-100 hover:text-black ${!open && 'rotate-180'}`}
-							onClick={() => (isMobile ? toggleMobileNav() : setOpen(!open))}
-						/>
-					</div>
-
-					{/* Body */}
-					<ul className="flex-1">
-						<div className="-mx-4 mb-4 h-[1px] bg-[#DEDEDE]"></div>
-						{menuItems.map((item, index) => {
-							const isActive = active === item.label
-							return (
-								<Popover key={index} label={item.label} show={!isMobile && !open}>
-									<li>
-										<Link href={item.path} className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[#E5E5E5]">
-											<div>{item.icon(isActive)}</div>
-											{(open || isMobile) && <p>{item.label}</p>}
-										</Link>
-									</li>
-								</Popover>
-							)
-						})}
-					</ul>
-
-					{/* Footer */}
-					<div className="mt-auto">
-						<div className="-mx-4 h-[1px] bg-[#DEDEDE]"></div>
-						<ul className="pb-4">
-							{menuItemsFooter.map((item, index) => {
-								const isActive = active === item.label
-								return (
-									<Popover key={index} label={item.label} show={!isMobile && !open}>
-										<li>
-											<Link href={item.path} className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[#E5E5E5]">
-												<div>{item.icon(isActive)}</div>
-												{(open || isMobile) && <p>{item.label}</p>}
-											</Link>
-										</li>
-									</Popover>
-								)
-							})}
-						</ul>
-					</div>
-				</nav>
-			)}
-		</>
+			{/* Body */}
+			<ul className="flex-1">
+				<div className="-mx-4 mb-4 h-[1px] bg-[#DEDEDE]"></div>
+				{menuItems.map((item, index) => {
+					const isActive = active === item.label
+					return (
+						<Popover key={index} label={item.label} show={!isMobile && !open}>
+							<li>
+								<Link href={item.path} className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[#E5E5E5]">
+									<div>{item.icon(isActive)}</div>
+									{(open || isMobile) && <p>{item.label}</p>}
+								</Link>
+							</li>
+						</Popover>
+					)
+				})}
+			</ul>
+		</nav>
 	)
 }
