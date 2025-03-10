@@ -1,4 +1,4 @@
-import fluid, { extract, screens, fontSize } from 'fluid-tailwind'
+import fluid, { extract, fontSize, screens } from 'fluid-tailwind'
 import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 

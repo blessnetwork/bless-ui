@@ -13,28 +13,25 @@ import {
 } from '@/components/ui/icons'
 import Popover from '@/components/ui/popover'
 import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 const iconClasses = (isActive: boolean) =>
 	`w-[18px] h-[18px] text-[13px] ${
 		isActive ? 'text-black' : 'text-[#A0A2A0] group-hover:text-black'
 	}`
 
-const menuItems = [
-	{ label: 'Home', icon: (isActive: boolean) => <HomeIcon className={iconClasses(isActive)} /> },
-	{ label: 'My Nodes', icon: (isActive: boolean) => <MyNodesIcon className={iconClasses(isActive)} /> },
-	{ label: 'Staking', icon: (isActive: boolean) => <StakingIcon className={iconClasses(isActive)} /> },
-	{ label: 'Airdrops', icon: (isActive: boolean) => <AirdropsIcon className={iconClasses(isActive)} /> },
-	{ label: 'Orchestration Node', icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} /> }
-]
+interface MenuItem {
+	label: string;
+	path: string;
+	icon: (isActive: boolean) => JSX.Element;
+}
 
-const menuItemsFooter = [
-	{ label: 'Settings', icon: (isActive: boolean) => <SettingsIcon className={iconClasses(isActive)} /> },
-	{ label: 'Referrals', icon: (isActive: boolean) => <ReferralsIcon className={iconClasses(isActive)} /> },
-	{ label: 'Documentation', icon: (isActive: boolean) => <DocumentationIcon className={iconClasses(isActive)} /> },
-	{ label: 'Logout', icon: (isActive: boolean) => <LogoutIcon className={iconClasses(isActive)} /> }
-]
+interface SideNavProps {
+	menuItems: MenuItem[];
+	menuItemsFooter: MenuItem[];
+}
 
-export default function SideNav() {
+export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 	const [open, setOpen] = useState(true)
 	const [hidden, setHidden] = useState(false)
 	const [active, setActive] = useState('Home')
@@ -113,24 +110,14 @@ export default function SideNav() {
 						{menuItems.map((item, index) => {
 							const isActive = active === item.label
 							return (
-								<li
-									key={index}
-									onClick={() => setActive(item.label)}
-									className={`group my-2 flex max-h-[40px] min-h-[40px] cursor-pointer items-center gap-2 rounded-lg px-3 py-1.5 duration-100 ${
-										isActive ? '!bg-[#FFFFFF] !text-black shadow-md' : 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
-									}`}
-								>
-									{open || isMobile ? (
-										<>
-											<div className="mr-1">{item.icon(isActive)}</div>
-											<p>{item.label}</p>
-										</>
-									) : (
-										<Popover label={item.label}>
-											<div className="mr-1">{item.icon(isActive)}</div>
-										</Popover>
-									)}
-								</li>
+								<Popover key={index} label={item.label} show={!isMobile && !open}>
+									<li>
+										<Link href={item.path} className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[#E5E5E5]">
+											<div>{item.icon(isActive)}</div>
+											{(open || isMobile) && <p>{item.label}</p>}
+										</Link>
+									</li>
+								</Popover>
 							)
 						})}
 					</ul>
@@ -138,28 +125,18 @@ export default function SideNav() {
 					{/* Footer */}
 					<div className="mt-auto">
 						<div className="-mx-4 h-[1px] bg-[#DEDEDE]"></div>
-						<ul className="flex-1 pb-4">
+						<ul className="pb-4">
 							{menuItemsFooter.map((item, index) => {
 								const isActive = active === item.label
 								return (
-									<li
-										key={index}
-										onClick={() => setActive(item.label)}
-										className={`group my-2 flex max-h-[40px] min-h-[40px] cursor-pointer items-center gap-2 rounded-lg px-3 py-2 duration-100 ${
-											isActive ? '!bg-[#FFFFFF] !text-black shadow-md' : 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:text-black'
-										}`}
-									>
-										{open || isMobile ? (
-											<>
-												<div className="mr-1">{item.icon(isActive)}</div>
-												<p>{item.label}</p>
-											</>
-										) : (
-											<Popover label={item.label}>
-												<div className="mr-1">{item.icon(isActive)}</div>
-											</Popover>
-										)}
-									</li>
+									<Popover key={index} label={item.label} show={!isMobile && !open}>
+										<li>
+											<Link href={item.path} className="group flex items-center gap-2 p-3 rounded-lg hover:bg-[#E5E5E5]">
+												<div>{item.icon(isActive)}</div>
+												{(open || isMobile) && <p>{item.label}</p>}
+											</Link>
+										</li>
+									</Popover>
 								)
 							})}
 						</ul>
