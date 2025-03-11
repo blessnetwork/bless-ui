@@ -15,7 +15,7 @@ const DemoInput = () => {
 
 export function Demo() {
 	return (
-		<div className="flex w-[600px] h-[200px] p-4 my-4">
+		<div className="my-4 flex h-[200px] w-[600px] p-4">
 			<DemoInput />
 		</div>
 	)

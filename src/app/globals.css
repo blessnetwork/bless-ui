@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--font-inter), sans-serif;
+	@apply bg-background text-black;
 }
 
 @layer utilities {
@@ -12,53 +13,9 @@ body {
 	}
 }
 
-@font-face {
-	font-family: 'TelkaTRIAL-Bold';
-	src: url('./fonts/TelkaTRIAL-Bold.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Medium';
-	src: url('./fonts/TelkaTRIAL-Medium.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Regular';
-	src: url('./fonts/TelkaTRIAL-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'TelkaTRIAL-Light';
-	src: url('./fonts/TelkaTRIAL-Light.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
-.font-bold {
-	font-family: 'TelkaTRIAL-Bold', sans-serif;
-}
-
-.font-medium {
-	font-family: 'TelkaTRIAL-Medium', sans-serif;
-}
-
-.font-regular {
-	font-family: 'TelkaTRIAL-Regular', sans-serif;
-}
-
-.font-light {
-	font-family: 'TelkaTRIAL-Light', sans-serif;
-}
-
 @layer base {
 	:root {
-		--background: 0 0% 100%;
+		--background: 0 0% 98%;
 		--foreground: 0 0% 3.9%;
 		--card: 0 0% 100%;
 		--card-foreground: 0 0% 3.9%;
@@ -140,4 +97,8 @@ textarea {
 	box-sizing: border-box !important;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
 }

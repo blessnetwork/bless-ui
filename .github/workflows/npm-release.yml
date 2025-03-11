@@ -26,12 +26,12 @@ jobs:
         uses: bruceadams/get-release@v1.3.2
         env:
           GITHUB_TOKEN: ${{ github.token }}
-  
-      - name: "change version"
+
+      - name: 'change version'
         uses: dmikey/package-json-version@v0.0.2
         with:
           version: ${{ steps.get_release.outputs.tag_name }}
-          package: "./"
+          package: './'
 
       - name: Install dependencies
         run: yarn install
