@@ -1,24 +1,10 @@
 import {
-	AirdropsIcon,
-	DocumentationIcon,
-	HomeIcon,
 	LogoIcon,
-	LogoutIcon,
-	MenuIcon,
-	MyNodesIcon,
-	OrchestrationNodeIcon,
-	ReferralsIcon,
-	SettingsIcon,
-	StakingIcon
+	MenuIcon
 } from '@/components/ui/icons'
 import Popover from '@/components/ui/popover'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-
-const iconClasses = (isActive: boolean) =>
-	`w-[18px] h-[18px] text-[13px] ${
-		isActive ? 'text-black' : 'text-[#A0A2A0] group-hover:text-black'
-	}`
 
 interface MenuItem {
 	label: string
@@ -33,8 +19,7 @@ interface SideNavProps {
 	setOpen: (open: boolean) => void
 }
 
-export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
-	const [open, setOpen] = useState(true)
+export default function SideNav({ menuItems, menuItemsFooter, open, setOpen }: SideNavProps) {
 	const [hidden, setHidden] = useState(false)
 	const [active, setActive] = useState('Home')
 	const [isMobile, setIsMobile] = useState(false)

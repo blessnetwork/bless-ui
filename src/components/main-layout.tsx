@@ -1,5 +1,6 @@
 'use client'
 
+import { ReactNode, useState, useEffect } from 'react'
 import {
 	AirdropsIcon,
 	DocumentationIcon,
@@ -12,7 +13,9 @@ import {
 	StakingIcon
 } from '@/components/ui/icons'
 import SideNav from '@/components/ui/side-nav'
-import React, { useState } from 'react'
+import Header from '@/components/ui/header'
+
+import '@/styles/globals.css'
 
 const iconClasses = (isActive: boolean) =>
 	`w-[18px] h-[18px] text-[13px] ${
@@ -70,22 +73,45 @@ const menuItemsFooter = [
 	}
 ]
 
-export default function Page() {
+interface MainLayoutProps {
+	children: ReactNode
+}
+
+export default function MainLayout({ children }: MainLayoutProps) {
 	const [open, setOpen] = useState(true)
+	const [isMobile, setIsMobile] = useState(false)
+
+	// Detect screen width for responsive behavior
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 1024)
+		}
+		handleResize() // Run on mount
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
+	}, [])
+
+	// Automatically collapse sidebar when in mobile mode
+	const sidebarOpen = !isMobile || open
 
 	return (
-		<div className="flex">
+		<div className="flex h-screen w-full">
+			{/* Fixed SideNav to prevent content from going behind it */}
 			<SideNav
 				menuItems={menuItems}
 				menuItemsFooter={menuItemsFooter}
-				open={open}
+				open={sidebarOpen}
 				setOpen={setOpen}
 			/>
-			<main
-				className={`flex-1 p-6 transition-all duration-300 ${open ? 'ml-[260px]' : 'ml-[72px]'}`}
+			{/* Parent wrapper for Header and Content that stays to the right of SideNav */}
+			<div
+				className={`flex flex-col h-full transition-all duration-300 ${
+					sidebarOpen ? 'ml-[260px] w-[calc(100%-260px)]' : 'ml-[72px] w-[calc(100%-72px)]'
+				}`}
 			>
-				<h1 className="text-2xl font-bold">Dashboard</h1>
-			</main>
+				<Header sidebarOpen={sidebarOpen} />
+				<main className="flex-1 overflow-auto p-6">{children}</main>
+			</div>
 		</div>
 	)
 }

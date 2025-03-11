@@ -1,7 +1,6 @@
+import MainLayout from '@/components/main-layout'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
-import './globals.css'
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -22,7 +21,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" className={inter.variable}>
 			<body className="font-sans">
-				<div className="flex min-h-screen w-full flex-col">{children}</div>
+				<MainLayout>{children}</MainLayout>
 			</body>
 		</html>
 	)
