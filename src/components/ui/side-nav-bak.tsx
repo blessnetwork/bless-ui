@@ -29,7 +29,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 	return (
 		<nav
 			id="sidenav"
-			className="flex min-h-screen flex-col bg-[#F0F0F0] transition-all duration-300"
+			className="min-h-screen bg-[#F0F0F0] transition-all duration-300"
 			style={{ width }}
 		>
 			<div
@@ -47,8 +47,7 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 					/>
 				</button>
 			</div>
-
-			<ul className="flex-grow space-y-1 p-2">
+			<ul className="space-y-1 p-2">
 				{menuItems.map((item) => {
 					const isActive = activePath === item.path
 					return (
@@ -69,31 +68,6 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 					)
 				})}
 			</ul>
-
-			{/* Footer Menu Items - Positioned at the Bottom */}
-			<div className="mt-auto p-2">
-				<ul className="space-y-1">
-					{menuItemsFooter.map((item) => {
-						const isActive = activePath === item.path
-						return (
-							<li key={item.path} onClick={() => setActivePath(item.path)}>
-								<Link href={item.path}>
-									<div
-										className={`group flex items-center gap-2 rounded-lg p-3 ${isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'}`}
-									>
-										{item.icon(isActive)}
-										<span
-											className={`ml-3 text-sm transition-opacity ${isExpanded ? 'opacity-100' : 'hidden opacity-0'}`}
-										>
-											{item.label}
-										</span>
-									</div>
-								</Link>
-							</li>
-						)
-					})}
-				</ul>
-			</div>
 		</nav>
 	)
 }
