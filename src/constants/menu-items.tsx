@@ -12,10 +12,13 @@ import {
     StakingIcon
 } from '@/components/ui/icons'
 
-const iconClasses = (isActive: boolean) =>
-    `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-black' : 'text-[#A0A2A0] group-hover:text-black'
-    }`
+const iconClasses = (isActive: boolean) => {
+    return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-black' : 'text-[#A0A2A0] group-hover:text-black'
+        }`
+}
 
+
+// fixme: change paths back to /path-name
 const menuItems = [
     {
         label: 'Home',
@@ -29,17 +32,20 @@ const menuItems = [
     },
     {
         label: 'Staking',
-        path: '/staking',
+        // path: '/staking',
+        path: '#',
         icon: (isActive: boolean) => <StakingIcon className={iconClasses(isActive)} />
     },
     {
         label: 'Airdrops',
-        path: '/airdrops',
+        // path: '/airdrops',
+        path: '#',
         icon: (isActive: boolean) => <AirdropsIcon className={iconClasses(isActive)} />
     },
     {
         label: 'Orchestration Node',
-        path: '/orchestration',
+        // path: '/orchestration',
+        path: '#',
         icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
     }
 ]
