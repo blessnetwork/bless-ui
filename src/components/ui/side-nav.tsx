@@ -4,7 +4,6 @@ import { LogoIcon, MenuIcon } from '@/components/ui/icons'
 import Popover from '@/components/ui/popover'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { FaLessThanEqual } from 'react-icons/fa'
 
 interface MenuItem {
 	label: string
