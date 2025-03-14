@@ -104,7 +104,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 				setOpen={setOpen}
 			/>
 			{/* Parent wrapper for Header and Content that stays to the right of SideNav */}
-			<div
+			<div id="parentWrapper"
 				className={`flex flex-col h-full transition-all duration-300 ${
 					sidebarOpen ? 'ml-[260px] w-[calc(100%-260px)]' : 'ml-[72px] w-[calc(100%-72px)]'
 				}`}
