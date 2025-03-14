@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import MainLayout from '@/components/main-layout'
 
-export default function Page() {
-	const [open, setOpen] = useState(true)
-
+export default function AboutPage() {
 	return (
-		<div>
-			<h1 className="text-2xl font-bold">My Nodes</h1>
-		</div>
+		<MainLayout>
+			<h1 className="text-lg font-bold">My Nodes Page</h1>
+			<p>This is the My Nodes page content.</p>
+		</MainLayout>
 	)
 }

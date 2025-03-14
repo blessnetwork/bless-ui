@@ -1,6 +1,7 @@
 'use client'
 
-import { LogoIcon, MenuIcon } from '@/components/ui/icons'
+import SideNav from '@/components/ui/side-nav'
+import { menuItems, menuItemsFooter } from '@/constants/menu-items'
 import React, { useEffect, useState } from 'react'
 
 interface MainLayoutProps {
@@ -27,49 +28,13 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
 	return (
 		<div id="container" className="flex min-h-screen w-full">
-			{/* Sidebar */}
-			<nav
-				id="sidenav"
-				className={`min-h-screen bg-[#F0F0F0] transition-all duration-300 ${
-					isExpanded ? 'w-[260px]' : 'w-[72px]'
-				}`}
-			>
-				{/* Sidebar Header */}
-				<div
-					id="sidebar_header"
-					className="bg-gray-300 flex h-[74px] items-center px-4 py-3 shadow-md"
-				>
-					{/* Logo - Hidden when collapsed */}
-					<div
-						className={`transition-opacity duration-300 ${
-							isExpanded ? 'opacity-100' : 'hidden opacity-0'
-						}`}
-					>
-						<LogoIcon className="h-8 w-8" />
-					</div>
-
-					{/* Hamburger Menu - Always Visible */}
-					<button
-						onClick={toggleSidebar}
-						className="ml-auto rounded p-1 transition-all duration-200"
-					>
-						<MenuIcon
-							className={`h-6 w-6 cursor-pointer text-[#A0A2A0] transition-transform duration-100 hover:text-black ${
-								isExpanded ? 'rotate-0' : 'rotate-180'
-							}`}
-						/>
-					</button>
-				</div>
-
-				{/* Sidebar Menu */}
-				<ul className="p-2">
-					<li>item</li>
-					<li>item</li>
-					<li>item</li>
-					<li>item</li>
-					<li>item</li>
-				</ul>
-			</nav>
+			{/* Sidebar Component */}
+			<SideNav
+				menuItems={menuItems}
+				menuItemsFooter={menuItemsFooter}
+				isExpanded={isExpanded}
+				toggleSidebar={toggleSidebar}
+			/>
 
 			{/* Main Content Area */}
 			<div
