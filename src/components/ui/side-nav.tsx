@@ -1,3 +1,5 @@
+'use client'
+
 import {
 	LogoIcon,
 	MenuIcon
@@ -5,6 +7,7 @@ import {
 import Popover from '@/components/ui/popover'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { FaLessThanEqual } from 'react-icons/fa'
 
 interface MenuItem {
 	label: string
@@ -15,14 +18,13 @@ interface MenuItem {
 interface SideNavProps {
 	menuItems: MenuItem[]
 	menuItemsFooter: MenuItem[]
-	open: boolean
-	setOpen: (open: boolean) => void
 }
 
-export default function SideNav({ menuItems, menuItemsFooter, open, setOpen }: SideNavProps) {
+export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 	const [hidden, setHidden] = useState(false)
 	const [active, setActive] = useState('Home')
 	const [isMobile, setIsMobile] = useState(false)
+	const [open, setOpen] = useState(false)
 
 	// Handle responsive behavior
 	useEffect(() => {
