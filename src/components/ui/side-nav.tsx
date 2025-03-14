@@ -1,9 +1,6 @@
 'use client'
 
-import {
-	LogoIcon,
-	MenuIcon
-} from '@/components/ui/icons'
+import { LogoIcon, MenuIcon } from '@/components/ui/icons'
 import Popover from '@/components/ui/popover'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
@@ -80,8 +77,9 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 			{/* Sidebar */}
 			{!hidden && (
 				<nav
-					className={`fixed left-0 top-0 flex h-screen flex-col bg-[#F0F0F0] px-4 text-black shadow-md duration-300 ${isMobile ? 'z-50 w-full' : open ? 'w-[260px]' : 'w-[72px]'
-						}`}
+					className={`fixed left-0 top-0 flex h-screen flex-col bg-[#F0F0F0] px-4 text-black shadow-md duration-300 ${
+						isMobile ? 'z-50 w-full' : open ? 'w-[260px]' : 'w-[72px]'
+					}`}
 				>
 					{/* Header */}
 					<div className="flex h-14 items-center justify-between px-3 py-2">
@@ -103,8 +101,9 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 										<Link
 											href={item.path}
 											onClick={() => setActive(item.label)}
-											className={`group flex items-center gap-2 rounded-lg p-3 ${isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'
-												}`}
+											className={`group flex items-center gap-2 rounded-lg p-3 ${
+												isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'
+											}`}
 										>
 											<div>{item.icon(isActive)}</div>
 											{(open || isMobile) && <p>{item.label}</p>}
@@ -127,8 +126,9 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 											<Link
 												href={item.path}
 												onClick={() => setActive(item.label)}
-												className={`group flex items-center gap-2 rounded-lg p-3 ${isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'
-													}`}
+												className={`group flex items-center gap-2 rounded-lg p-3 ${
+													isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'
+												}`}
 											>
 												<div>{item.icon(isActive)}</div>
 												{(open || isMobile) && <p>{item.label}</p>}
