@@ -54,7 +54,7 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 	}
 
 	return (
-		<>
+		<section className="">
 			{/* Mobile Header (Only on iPhone) */}
 			{isMobile && (
 				<header className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between bg-[#F0F0F0] px-4 py-3 shadow-md">
@@ -141,6 +141,6 @@ export default function SideNav({ menuItems, menuItemsFooter }: SideNavProps) {
 					</div>
 				</nav>
 			)}
-		</>
+		</section>
 	)
 }
