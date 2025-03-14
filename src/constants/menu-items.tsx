@@ -18,7 +18,6 @@ const iconClasses = (isActive: boolean) => {
 	}`
 }
 
-// fixme: change paths back to /path-name
 const menuItems = [
 	{
 		label: 'Home',
@@ -32,20 +31,17 @@ const menuItems = [
 	},
 	{
 		label: 'Staking',
-		// path: '/staking',
-		path: '#',
+		path: '/staking',
 		icon: (isActive: boolean) => <StakingIcon className={iconClasses(isActive)} />
 	},
 	{
 		label: 'Airdrops',
-		// path: '/airdrops',
-		path: '#',
+		path: '/airdrops',
 		icon: (isActive: boolean) => <AirdropsIcon className={iconClasses(isActive)} />
 	},
 	{
 		label: 'Orchestration Node',
-		// path: '/orchestration',
-		path: '#',
+		path: '/orchestration',
 		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
 	}
 ]
