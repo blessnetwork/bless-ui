@@ -82,9 +82,9 @@ export default function Page() {
 				setOpen={setOpen}
 			/>
 			<main
-				className={`flex-1 p-6 transition-all duration-300 ${open ? 'ml-[260px]' : 'ml-[72px]'}`}
+				className={`flex-1 p-6 transition-all duration-300 bg-[#ff8200] ${open ? 'ml-[260px]' : 'ml-[72px]'}`}
 			>
-				<h1 className="text-2xl font-bold">Dashboard</h1>
+				<h1 className="text-2xl font-bold text-left p-6">Hello</h1>
 			</main>
 		</div>
 	)
