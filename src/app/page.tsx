@@ -2,11 +2,11 @@
 
 import MainLayout from '@/components/main-layout'
 
-export default function AboutPage() {
+export default function AppPage() {
 	return (
 		<MainLayout>
-			<h1 className="text-lg font-bold">Home Page</h1>
-			<p>This is the Home page content.</p>
+			<h1 className="text-lg font-bold">App Page</h1>
+			<p>This is the App page content.</p>
 		</MainLayout>
 	)
 }
