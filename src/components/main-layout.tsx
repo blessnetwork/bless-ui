@@ -96,13 +96,13 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
 	return (
 		<div className="flex h-screen w-full">
-			{/* Fixed SideNav to prevent content from going behind it */}
-			{/* <SideNav
+			
+			<SideNav
 				menuItems={menuItems}
 				menuItemsFooter={menuItemsFooter}
 				open={sidebarOpen}
 				setOpen={setOpen}
-			/> */}
+			/>
 			{/* Parent wrapper for Header and Content that stays to the right of SideNav */}
 			<div
 				className={`flex flex-col h-full transition-all duration-300 ${
