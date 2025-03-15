@@ -1,13 +1,22 @@
-*web-console*
-1. Reviewed and merged PR# 493.
+# Optimization and Refactoring Tasks
 
-*bless-ui*
-1. Met with Liam to go over requirements for new run-dashboard refresh.
-2. New component: Collapsible side-nav component with automated screen size transitions.
-3. New component: Mobile header with side-nav toggle.
-4. New component: Fluid button with smooth transitions between large and small screens.
-5. New component: SVG custom icons with modifiers for color and size.
-6. Tailwind config: Added prettier-tailwind-plugin which sorts classNames logically.
-7. Tailwind config: Set Icon and text size.
-8. Tailwind config: Fluid tailwind added for smooth responsive transitions.
-9. [PR #4 SideNav and Icons ready for review](https://github.com/blocklessnetwork/bless-ui/pull/4)
+## Optimize: SideNav component
+- Memoize renderMenuItem function to prevent unnecessary re-renders
+- Consolidate rendering logic for main and footer menu items
+- Improve code structure and remove redundant logic
+- Enhance type safety with explicit React.FC typing
+- Adjust import order for better organization
+
+## Optimize: MainLayout component
+- Improve code structure and remove redundant logic
+- Enhance type safety with explicit React.FC typing
+- Adjust import order for better organization
+- Consolidate styling with Tailwind CSS classes
+- Improve responsiveness with dynamic width calculation
+
+## Refactor: Update Prettier config
+- Modify .prettierrc to remove empty lines between imports
+- Add importOrderGroupNamespaceSpecifiers and importOrderParserPlugins
+- Adjust importOrder to prioritize React and Next.js imports
+- Update import statements across the project for consistency
+- Improve code readability with more compact import blocks

@@ -6,8 +6,18 @@
 	"trailingComma": "none",
 	"semi": false,
 	"printWidth": 100,
-	"importOrderSeparation": true,
+	"importOrderSeparation": false,
 	"importOrderSortSpecifiers": true,
-	"importOrder": ["^@blockless/(.*)$", "^[./]"],
+	"importOrderGroupNamespaceSpecifiers": true,
+	"importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
+	"importOrder": [
+		"^react$",
+		"^react-dom$",
+		"^react",
+		"^next",
+		"<THIRD_PARTY_MODULES>",
+		"^@blockless/(.*)$",
+		"^[./]"
+	],
 	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
 }

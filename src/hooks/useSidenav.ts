@@ -1,5 +1,5 @@
-import { useSidenavStore } from '@/state/useSidenavStore'
 import { useEffect } from 'react'
+import { useSidenavStore } from '@/state/useSidenavStore'
 
 const useSidenav = () => {
 	const { setDevice } = useSidenavStore()
