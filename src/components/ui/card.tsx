@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { cn } from '@/lib/utils'
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+const CardWrapper = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
 	({ className, ...props }, ref) => (
 		<div
 			ref={ref}
@@ -10,7 +10,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
 		/>
 	)
 )
-Card.displayName = 'Card'
+CardWrapper.displayName = 'Card'
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
 	({ className, ...props }, ref) => (
@@ -51,4 +51,38 @@ const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
 )
 CardFooter.displayName = 'CardFooter'
 
-export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+export { CardWrapper, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
+
+interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
+	title?: React.ReactNode
+	description?: React.ReactNode
+	footer?: React.ReactNode
+}
+
+const Card: React.FC<CardProps> = ({
+	className,
+	title,
+	description,
+	children,
+	footer,
+	...props
+}) => {
+	return (
+		<CardWrapper
+			className={cn(
+				'w-full flex-1 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]',
+				className
+			)}
+			{...props}
+		>
+			<CardHeader>
+				{title && <CardTitle>{title}</CardTitle>}
+				{description && <CardDescription>{description}</CardDescription>}
+			</CardHeader>
+			<CardContent>{children}</CardContent>
+			{footer && <CardFooter>{footer}</CardFooter>}
+		</CardWrapper>
+	)
+}
+
+export default Card

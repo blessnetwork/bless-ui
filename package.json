@@ -13,6 +13,7 @@
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",
 		"@highlightjs/cdn-assets": "^11.10.0",
+		"@radix-ui/react-slot": "^1.1.2",
 		"@stackblitz/sdk": "^1.11.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.1",
