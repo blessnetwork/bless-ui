@@ -65,7 +65,22 @@ import {
 	CardWrapper
 } from 'bless-ui'
 
-// Custom card layout
+export default function Example() {
+	return (
+		<CardWrapper>
+			<CardHeader>
+				<CardTitle>Card Title</CardTitle>
+				<CardDescription>Card Description</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<p>Card Content</p>
+			</CardContent>
+			<CardFooter>
+				<p>Card Footer</p>
+			</CardFooter>
+		</CardWrapper>
+	)
+}
 ```
 
 This allows for more control over the card's structure and styling.
