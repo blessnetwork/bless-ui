@@ -4,7 +4,7 @@
 
 body {
 	font-family: var(--font-inter), sans-serif;
-	@apply bg-background text-black;
+	@apply bg-green text-black;
 }
 
 @layer utilities {
@@ -81,10 +81,6 @@ body {
 a {
 	text-decoration: underline;
 	text-underline-offset: 2px;
-
-	&:hover {
-		opacity: 0.5;
-	}
 }
 
 .parent {

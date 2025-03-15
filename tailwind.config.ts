@@ -3,21 +3,13 @@ import type { Config } from 'tailwindcss'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config: Config = {
-	plugins: [
-		require('tailwindcss-animate'),
-		require('@tailwindcss/typography'),
-		require('@tailwindcss/container-queries'),
-		fluid
+	content: [
+		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
 	],
+	extract,
 	darkMode: ['class'],
-	content: {
-		files: [
-			'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-			'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
-			'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
-		],
-		extract
-	},
 	theme: {
 		screens, // Fluid Tailwind's default screens, in `rem`
 		fontSize, // Fluid Tailwind's default font sizes, in `rem` (including line heights)
@@ -91,6 +83,13 @@ const config: Config = {
 			charcoal: '#292D2A',
 			black: '#000000'
 		}
-	}
+	},
+	plugins: [
+		require('tailwindcss-animate'),
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/container-queries'),
+		fluid
+	]
 }
+
 export default config

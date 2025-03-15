@@ -1,17 +1,12 @@
-import Link from 'next/link'
+'use client'
 
-import './globals.css'
+import MainLayout from '@/components/main-layout'
 
-export default function LandingPage() {
+export default function AppPage() {
 	return (
-		<div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-light sm:p-20">
-			<main className="row-start-2 flex flex-col items-center gap-4">
-				<div className="text-3xl">Bless UI</div>
-				<div className="mt-0 text-lg">React component library</div>
-				<Link href="/get-started">Get Started</Link>
-				<Link href="/button">Button</Link>
-				<Link href="/side-nav">Side Nav</Link>
-			</main>
-		</div>
+		<MainLayout>
+			<h1 className="text-lg font-bold">App Page</h1>
+			<p>This is the App page content.</p>
+		</MainLayout>
 	)
 }
