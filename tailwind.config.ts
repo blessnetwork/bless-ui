@@ -66,7 +66,7 @@ const config: Config = {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			dropShadow: {
-				main: '4px 4px 7px rgba(75, 75, 75, 0.19)'
+				card: '0px 4px 4px rgba(0, 0, 0, 0.25)'
 			},
 			boxShadow: {
 				'inner-slate': 'inset 4px 4px 8px 0px rgba(75, 75, 75, 0.19)',

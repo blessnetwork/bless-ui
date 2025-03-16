@@ -3,8 +3,7 @@ import CardSection, { CardData } from '@/components/ui/card-section'
 
 export interface CardSectionProps {
 	cards: CardData[]
-	cardType?: string // Add cardType as an optional property
-	// other properties
+	cardType?: string
 }
 
 export default function HomePage() {

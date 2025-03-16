@@ -10,6 +10,9 @@ const HEADER_HEIGHT = 'h-[74px]'
 const HEADER_BG = 'bg-[#FF8200]'
 const CONTENT_BG = 'bg-[#FFC0CB]'
 
+// const HEADER_BG = 'bg-[#F0F0F0]'
+// const CONTENT_BG = 'bg-[#FFFFFF]'
+
 interface MainLayoutProps {
 	children: React.ReactNode
 }
