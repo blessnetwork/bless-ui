@@ -2,22 +2,35 @@
 
 The Card component is a flexible UI element for displaying content in a structured format.
 
+## Exports
+
+The following components and types are exported from the `Card` module:
+
+- `Card`: The main component for rendering a card.
+- `CardWrapper`: Wrapper component for the card.
+- `CardHeader`: Component for the card's header.
+- `CardTitle`: Component for the card's title.
+- `CardDescription`: Component for the card's description.
+- `CardContent`: Component for the card's main content.
+- `CardFooter`: Component for the card's footer.
+- `CardImage`: Component for rendering an optional image at the top of the card.
+
 ## Usage
 
-```ts
-import { Card } from 'bless-ui';
+```jsx
+import { Card } from 'bless-ui'
 
 function Example() {
-  return (
-    <Card
-      title="Card Title"
-      description="Card description"
-      footer={<button>Action</button>}
-      image="/path/to/image.jpg" // New property
-    >
-      <p>Main content goes here.</p>
-    </Card>
-  );
+	return (
+		<Card
+			title="Card Title"
+			description="Card description"
+			footer={<button>Action</button>}
+			image="/path/to/image.jpg"
+		>
+			<p>Main content goes here.</p>
+		</Card>
+	)
 }
 ```
 
@@ -32,26 +45,14 @@ function Example() {
 | `children`    | `React.ReactNode` | Main card content                                             |
 | `image`       | `string`          | (Optional) URL of an image to display at the top of the card. |
 
-The Card component also accepts all standard HTML div attributes except `title`.
-
-## Styling
-
-The Card uses Tailwind CSS for responsive layout:
-
-- Full width on small screens
-- Two columns on medium screens
-- Three columns on large screens
-
-Override styles with the `className` prop.
-
 ## Structure
 
 The Card is composed of:
 
-- `CardWrapper`: Main container
-- `CardHeader`: Contains title and description
-- `CardContent`: Holds main content
-- `CardFooter`: For footer content
+- `CardWrapper`: Main container.
+- `CardHeader`: Contains title and description.
+- `CardContent`: Holds main content.
+- `CardFooter`: For footer content.
 - `CardImage`: (Optional) Displays an image at the top of the card if the `image` prop is provided.
 
 ## Customization
@@ -64,7 +65,7 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
-	CardImage, // New component
+	CardImage,
 	CardTitle,
 	CardWrapper
 } from 'bless-ui'
@@ -87,5 +88,3 @@ export default function Example() {
 	)
 }
 ```
-
-This allows for more control over the card's structure and styling.
