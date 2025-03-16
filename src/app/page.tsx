@@ -82,7 +82,7 @@ export default function HomePage() {
 		<MainLayout>
 			<CardSection cards={section1Cards} cardType="Card" />
 			<CardSection cards={section2Cards} cardType="Card" className="mt-4" />
-			<CardSection cards={section3Cards} cardType="CardAchievement" className="mt-4" />
+			<CardSection cards={section3Cards} cardType="Card" className="mt-4" />
 			<CardSection cards={section4Cards} cardType="Card" className="mt-4" />
 		</MainLayout>
 	)

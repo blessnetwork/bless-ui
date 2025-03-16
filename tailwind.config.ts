@@ -6,7 +6,8 @@ const config: Config = {
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
-		'./src/app/**/*.{js,ts,jsx,tsx,mdx}'
+		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
+		'./src/**/*.{js,ts,jsx,tsx}'
 	],
 	extract,
 	darkMode: ['class'],
@@ -18,8 +19,10 @@ const config: Config = {
 				sans: ['var(--font-inter)', ...fontFamily.sans]
 			},
 			colors: {
+				white: 'hsl(0, 0%, 100%)',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'background-sidenav': 'hsl(var(--background-sidenav))',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
@@ -64,13 +67,6 @@ const config: Config = {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			dropShadow: {
-				card: '0px 4px 4px rgba(0, 0, 0, 0.25)'
-			},
-			boxShadow: {
-				'inner-slate': 'inset 4px 4px 8px 0px rgba(75, 75, 75, 0.19)',
-				'inner-none': 'inset 0px 0px 0px 0px rgba(0, 0, 0, 0)'
 			}
 		},
 		colors: {

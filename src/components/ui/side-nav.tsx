@@ -32,8 +32,10 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 					<li key={item.path} onClick={() => setActivePath(item.path)}>
 						<Link href={item.path}>
 							<div
-								className={`group flex items-center gap-2 rounded-lg p-3 ${
-									isActive ? 'bg-[#FFFFFF] text-black' : 'text-[#A0A2A0] hover:bg-[#E5E5E5]'
+								className={`group flex h-9 items-center gap-3 rounded-lg px-5 ${
+									isActive
+										? 'bg-white text-black shadow-md'
+										: 'text-[#A0A2A0] hover:bg-[#E5E5E5] hover:shadow-md'
 								}`}
 							>
 								{item.icon(isActive)}
@@ -55,10 +57,10 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 	return (
 		<nav
 			id="sidenav"
-			className="flex min-h-screen flex-col bg-[#F0F0F0] transition-all duration-300"
+			className="flex min-h-screen flex-col bg-background-sidenav transition-all duration-300"
 			style={{ width }}
 		>
-			<div
+			<header
 				id="sidebar_header"
 				className="bg-gray-300 flex h-[74px] items-center px-4 py-3 shadow-md"
 			>
@@ -76,9 +78,11 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 						}`}
 					/>
 				</button>
-			</div>
+			</header>
 
-			<ul className="flex-grow space-y-1 p-2">{menuItems.map((item) => renderMenuItem(item))}</ul>
+			<ul className="flex-grow space-y-1 px-2 py-4">
+				{menuItems.map((item) => renderMenuItem(item))}
+			</ul>
 
 			<div className="mt-auto p-2">
 				<ul className="space-y-1">{menuItemsFooter.map((item) => renderMenuItem(item, true))}</ul>

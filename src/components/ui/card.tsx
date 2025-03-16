@@ -6,7 +6,7 @@ const CardWrapper = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
 		<div
 			ref={ref}
 			className={cn(
-				'outline-stone-950/5 rounded-xl bg-card text-card-foreground outline outline-1 drop-shadow-card',
+				'outline-stone-950/5 rounded-xl bg-white text-card-foreground shadow-md outline outline-1',
 				className
 			)}
 			{...props}
