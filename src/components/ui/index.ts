@@ -1,4 +1,11 @@
 export { default as Button } from './button'
 export { default as Card } from './card'
 export { default as CardSection } from './card-section'
-// Add other component exports here
+export { default as Input } from './input'
+export { default as Popover } from './popover'
+export { default as SideNav } from './side-nav'
+export * as Icons from './icons'
+export { default as Header } from './header'
+export { default as HeaderMobile } from './header-mobile'
+// export { default as Modal } from './modal'
+export { default as MainLayout } from '../main-layout'
