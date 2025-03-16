@@ -8,11 +8,12 @@ The following components and types are exported from the `CardSection` module:
 
 - `CardSection`: The main component for rendering a section of cards.
 - `CardData`: Type definition for the data structure used by the `cards` prop.
+- `CardAchievement`: A specialized card component for showcasing achievements.
 
 ## Usage
 
 ```jsx
-import { Card, CardSection } from 'bless-ui'
+import { Card, CardAchievement, CardSection } from 'bless-ui'
 
 function Example() {
 	const cards = [
@@ -56,6 +57,7 @@ type CardData = {
 	content: string
 	footer: React.ReactNode
 	image?: string // Optional property
+	cardType?: string // Optional property to determine card type
 }
 ```
 
@@ -66,13 +68,14 @@ type CardData = {
 | `content`     | `string`          | The main content of the card.                                             |
 | `footer`      | `React.ReactNode` | Content to be rendered in the card's footer. Can be any valid React node. |
 | `image`       | `string`          | (Optional) URL of an image to display at the top of the card.             |
+| `cardType`    | `string`          | (Optional) Type of the card to determine which component to render.       |
 
-## Rendering Different Card Types
+## Rendering Different Card Types Using `cardType`
 
-The `CardSection` component can render different types of cards, including custom card components. Below is an example of rendering various card types:
+The `CardSection` component can use a `cardType` property in the `CardData` objects to determine whether to render a `Card` or `CardAchievement`. Below is an example:
 
 ```jsx
-import { CardSection } from 'bless-ui'
+import { Card, CardAchievement, CardSection } from 'bless-ui'
 
 function App() {
 	const cards = [
@@ -80,37 +83,58 @@ function App() {
 			title: 'Basic Card',
 			description: 'This is a basic card.',
 			content: 'Basic card content.',
-			footer: <button>Basic Action</button>
+			footer: <button>Basic Action</button>,
+			cardType: 'basic' // Indicates this is a standard Card
 		},
 		{
-			title: 'Image Card',
-			description: 'This card has an image.',
-			content: 'Image card content.',
-			footer: <button>Image Action</button>,
-			image: '/path/to/image.jpg'
-		},
-		{
-			title: 'Custom Card',
-			description: 'This card uses a custom footer.',
-			content: 'Custom card content.',
-			footer: (
-				<div>
-					<button>Custom Action 1</button>
-					<button>Custom Action 2</button>
-				</div>
-			)
+			title: 'Achievement Card',
+			description: 'This card highlights an achievement.',
+			content: 'Achievement card content.',
+			footer: <button>Achievement Action</button>,
+			image: '/path/to/achievement.jpg',
+			cardType: 'achievement' // Indicates this is a CardAchievement
 		}
 	]
 
-	return <CardSection cards={cards} />
+	return (
+		<CardSection
+			cards={cards}
+			renderCard={(card) =>
+				card.cardType === 'achievement' ? (
+					<CardAchievement
+						title={card.title}
+						description={card.description}
+						content={card.content}
+						footer={card.footer}
+						image={card.image}
+					/>
+				) : (
+					<Card
+						title={card.title}
+						description={card.description}
+						content={card.content}
+						footer={card.footer}
+						image={card.image}
+					/>
+				)
+			}
+		/>
+	)
 }
 ```
+
+### Explanation
+
+1. **`cardType` Property**: Each card object in the `cards` array includes a `cardType` property to specify whether it should be rendered as a `Card` or `CardAchievement`.
+2. **`renderCard` Prop**: The `renderCard` function dynamically determines which component to render based on the `cardType` value.
+
+This approach allows for flexible rendering of different card types within the same `CardSection`.
 
 ## Features
 
 - Automatically adjusts layout based on the number of cards.
 - Supports optional images for each card.
-- Allows rendering of custom card components.
+- Allows rendering of custom card components, including `CardAchievement`.
 
 ## Responsive Behavior
 
@@ -122,39 +146,43 @@ The `CardSection` uses Tailwind CSS classes for responsive design:
 ## Example with Different Layouts
 
 ```jsx
-import { CardSection } from 'bless-ui'
+import { CardAchievement, CardSection } from 'bless-ui'
 
 function HomePage() {
-	const singleCard = [
+	const achievementCards = [
 		{
-			title: 'Single Card',
-			description: 'A single card layout.',
-			content: 'Content for a single card.',
-			footer: <button>Action</button>
-		}
-	]
-	const twoCards = [
-		{
-			title: 'Card 1',
-			description: 'First card in a two-card layout.',
-			content: 'Content for card 1.',
-			footer: <button>Action 1</button>
+			title: 'Achievement 1',
+			description: 'First achievement.',
+			content: 'Details about achievement 1.',
+			footer: <button>View More</button>,
+			image: '/path/to/achievement1.jpg',
+			type: 'achievement'
 		},
 		{
-			title: 'Card 2',
-			description: 'Second card in a two-card layout.',
-			content: 'Content for card 2.',
-			footer: <button>Action 2</button>
+			title: 'Achievement 2',
+			description: 'Second achievement.',
+			content: 'Details about achievement 2.',
+			footer: <button>View More</button>,
+			image: '/path/to/achievement2.jpg',
+			type: 'achievement'
 		}
 	]
 
 	return (
-		<div>
-			<CardSection cards={singleCard} className="mb-4" />
-			<CardSection cards={twoCards} className="mb-4" />
-		</div>
+		<CardSection
+			cards={achievementCards}
+			renderCard={(card) => (
+				<CardAchievement
+					title={card.title}
+					description={card.description}
+					content={card.content}
+					footer={card.footer}
+					image={card.image}
+				/>
+			)}
+		/>
 	)
 }
 ```
 
-This example demonstrates how to use the `CardSection` component to create different layouts with varying numbers of cards.
+This example demonstrates how to use the `CardSection` component to create layouts with `CardAchievement` cards.

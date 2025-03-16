@@ -14,22 +14,33 @@ The following components and types are exported from the `Card` module:
 - `CardContent`: Component for the card's main content.
 - `CardFooter`: Component for the card's footer.
 - `CardImage`: Component for rendering an optional image at the top of the card.
+- `CardAchievement`: A specialized card component for showcasing achievements.
 
 ## Usage
 
 ```jsx
-import { Card } from 'bless-ui'
+import { Card, CardAchievement } from 'bless-ui'
 
 function Example() {
 	return (
-		<Card
-			title="Card Title"
-			description="Card description"
-			footer={<button>Action</button>}
-			image="/path/to/image.jpg"
-		>
-			<p>Main content goes here.</p>
-		</Card>
+		<div>
+			<Card
+				title="Card Title"
+				description="Card description"
+				footer={<button>Action</button>}
+				image="/path/to/image.jpg"
+			>
+				<p>Main content goes here.</p>
+			</Card>
+
+			<CardAchievement
+				title="Achievement Title"
+				description="Achievement description"
+				content="Details about the achievement."
+				footer={<button>View More</button>}
+				image="/path/to/achievement.jpg"
+			/>
+		</div>
 	)
 }
 ```
@@ -45,9 +56,27 @@ function Example() {
 | `children`    | `React.ReactNode` | Main card content                                             |
 | `image`       | `string`          | (Optional) URL of an image to display at the top of the card. |
 
+## Props for `CardAchievement`
+
+| Prop          | Type              | Description                                                   |
+| ------------- | ----------------- | ------------------------------------------------------------- |
+| `title`       | `React.ReactNode` | Achievement card title                                        |
+| `description` | `React.ReactNode` | Achievement card description                                  |
+| `content`     | `React.ReactNode` | Main content for the achievement card                         |
+| `footer`      | `React.ReactNode` | Footer content                                                |
+| `image`       | `string`          | (Optional) URL of an image to display at the top of the card. |
+
 ## Structure
 
 The Card is composed of:
+
+- `CardWrapper`: Main container.
+- `CardHeader`: Contains title and description.
+- `CardContent`: Holds main content.
+- `CardFooter`: For footer content.
+- `CardImage`: (Optional) Displays an image at the top of the card if the `image` prop is provided.
+
+The `CardAchievement` component is composed of:
 
 - `CardWrapper`: Main container.
 - `CardHeader`: Contains title and description.
@@ -83,6 +112,39 @@ export default function Example() {
 			</CardContent>
 			<CardFooter>
 				<p>Card Footer</p>
+			</CardFooter>
+		</CardWrapper>
+	)
+}
+```
+
+For advanced layouts, use the `CardAchievement` component alongside other card components:
+
+```jsx
+import {
+	CardAchievement,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardImage,
+	CardTitle,
+	CardWrapper
+} from 'bless-ui'
+
+export default function Example() {
+	return (
+		<CardWrapper>
+			<CardImage src="/path/to/achievement.jpg" alt="Achievement Image" />
+			<CardHeader>
+				<CardTitle>Achievement Title</CardTitle>
+				<CardDescription>Achievement Description</CardDescription>
+			</CardHeader>
+			<CardContent>
+				<p>Details about the achievement.</p>
+			</CardContent>
+			<CardFooter>
+				<button>View More</button>
 			</CardFooter>
 		</CardWrapper>
 	)
