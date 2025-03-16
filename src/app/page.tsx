@@ -1,6 +1,12 @@
 import MainLayout from '@/components/main-layout'
 import CardSection, { CardData } from '@/components/ui/card-section'
 
+export interface CardSectionProps {
+	cards: CardData[]
+	cardType?: string // Add cardType as an optional property
+	// other properties
+}
+
 export default function HomePage() {
 	const section1Cards: CardData[] = [
 		{
@@ -75,10 +81,10 @@ export default function HomePage() {
 	]
 	return (
 		<MainLayout>
-			<CardSection cards={section1Cards} />
-			<CardSection cards={section2Cards} className="mt-4" />
-			<CardSection cards={section3Cards} className="mt-4" />
-			<CardSection cards={section4Cards} className="mt-4" />
+			<CardSection cards={section1Cards} cardType="Card" />
+			<CardSection cards={section2Cards} cardType="Card" className="mt-4" />
+			<CardSection cards={section3Cards} cardType="CardAchievement" className="mt-4" />
+			<CardSection cards={section4Cards} cardType="Card" className="mt-4" />
 		</MainLayout>
 	)
 }
