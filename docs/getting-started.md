@@ -39,7 +39,7 @@ Here are some basic examples of how to use the components:
 
 ### Button
 
-```jsx
+```tsx
 import { Button } from '@blessnetwork/bless-ui'
 
 function MyComponent() {
@@ -49,7 +49,7 @@ function MyComponent() {
 
 ### Card
 
-```jsx
+```tsx
 import { Card } from '@blessnetwork/bless-ui'
 
 function MyComponent() {
@@ -62,19 +62,36 @@ function MyComponent() {
 }
 ```
 
-### Input
+### CardSection
 
-```jsx
-import { Input } from '@blessnetwork/bless-ui'
+```tsx
+import { Card, CardAchievement, CardSection } from 'bless-ui'
 
-function MyComponent() {
-	return <Input placeholder="Enter your name" />
+function Example() {
+	const cards = [
+		{
+			title: 'Card 1',
+			description: 'Description for Card 1',
+			content: 'Content for Card 1',
+			footer: <button>Action 1</button>,
+			image: '/path/to/image1.jpg'
+		},
+		{
+			title: 'Card 2',
+			description: 'Description for Card 2',
+			content: 'Content for Card 2',
+			footer: <button>Action 2</button>,
+			image: '/path/to/image2.jpg'
+		}
+	]
+
+	return <CardSection cards={cards} className="my-custom-class" />
 }
 ```
 
 ### Header
 
-```jsx
+```tsx
 import { Header } from '@blessnetwork/bless-ui'
 
 function MyComponent() {
@@ -82,9 +99,29 @@ function MyComponent() {
 }
 ```
 
+### HeaderMobile
+
+```tsx
+import { HeaderMobile } from '@blessnetwork/bless-ui'
+
+function MyComponent() {
+	return <HeaderMobile />
+}
+```
+
+### Input
+
+```tsx
+import { Input } from '@blessnetwork/bless-ui'
+
+function MyComponent() {
+	return <Input placeholder="Enter your name" />
+}
+```
+
 ### SideNav
 
-```jsx
+```tsx
 import { SideNav } from '@blessnetwork/bless-ui'
 
 function MyComponent() {
@@ -100,7 +137,7 @@ function MyComponent() {
 
 ### MainLayout
 
-```jsx
+```tsx
 import { MainLayout } from '@blessnetwork/bless-ui'
 
 function MyPage() {
