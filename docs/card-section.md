@@ -13,13 +13,15 @@ function Example() {
 			title: 'Card 1',
 			description: 'Description for Card 1',
 			content: 'Content for Card 1',
-			footer: <button>Action 1</button>
+			footer: <button>Action 1</button>,
+			image: '/path/to/image1.jpg' // New property
 		},
 		{
 			title: 'Card 2',
 			description: 'Description for Card 2',
 			content: 'Content for Card 2',
-			footer: <button>Action 2</button>
+			footer: <button>Action 2</button>,
+			image: '/path/to/image2.jpg' // New property
 		}
 		// Add more card objects as needed
 	]
@@ -47,6 +49,7 @@ type CardData = {
 	description: string
 	content: string
 	footer: React.ReactNode
+	image?: string // New optional property
 }
 ```
 
@@ -56,6 +59,7 @@ type CardData = {
 | `description` | `string`          | A brief description or subtitle for the card.                             |
 | `content`     | `string`          | The main content of the card.                                             |
 | `footer`      | `React.ReactNode` | Content to be rendered in the card's footer. Can be any valid React node. |
+| `image`       | `string`          | (Optional) URL of an image to display at the top of the card.             |
 
 Additionally, the CardSection component handles the responsive layout of the cards based on the number of cards provided:
 
@@ -70,6 +74,7 @@ The component will render a maximum of 4 cards, even if more are provided in the
 - Automatically adjusts layout based on the number of cards
 - Limits display to a maximum of 4 cards per section
 - Utilizes the `Card` component to render each card
+- Supports optional images for each card
 
 ## Responsive Behavior
 

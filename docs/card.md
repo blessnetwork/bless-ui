@@ -13,8 +13,9 @@ function Example() {
       title="Card Title"
       description="Card description"
       footer={<button>Action</button>}
+      image="/path/to/image.jpg" // New property
     >
-      <p>Main content goes here.</p>d
+      <p>Main content goes here.</p>
     </Card>
   );
 }
@@ -22,13 +23,14 @@ function Example() {
 
 ## Props
 
-| Prop          | Type              | Description            |
-| ------------- | ----------------- | ---------------------- |
-| `title`       | `React.ReactNode` | Card title             |
-| `description` | `React.ReactNode` | Card description       |
-| `footer`      | `React.ReactNode` | Footer content         |
-| `className`   | `string`          | Additional CSS classes |
-| `children`    | `React.ReactNode` | Main card content      |
+| Prop          | Type              | Description                                                   |
+| ------------- | ----------------- | ------------------------------------------------------------- |
+| `title`       | `React.ReactNode` | Card title                                                    |
+| `description` | `React.ReactNode` | Card description                                              |
+| `footer`      | `React.ReactNode` | Footer content                                                |
+| `className`   | `string`          | Additional CSS classes                                        |
+| `children`    | `React.ReactNode` | Main card content                                             |
+| `image`       | `string`          | (Optional) URL of an image to display at the top of the card. |
 
 The Card component also accepts all standard HTML div attributes except `title`.
 
@@ -50,6 +52,7 @@ The Card is composed of:
 - `CardHeader`: Contains title and description
 - `CardContent`: Holds main content
 - `CardFooter`: For footer content
+- `CardImage`: (Optional) Displays an image at the top of the card if the `image` prop is provided.
 
 ## Customization
 
@@ -61,6 +64,7 @@ import {
 	CardDescription,
 	CardFooter,
 	CardHeader,
+	CardImage, // New component
 	CardTitle,
 	CardWrapper
 } from 'bless-ui'
@@ -68,6 +72,7 @@ import {
 export default function Example() {
 	return (
 		<CardWrapper>
+			<CardImage src="/path/to/image.jpg" alt="Card Image" />
 			<CardHeader>
 				<CardTitle>Card Title</CardTitle>
 				<CardDescription>Card Description</CardDescription>
