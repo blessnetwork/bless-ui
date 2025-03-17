@@ -19,9 +19,10 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 	const { width } = useSidenavStore()
 
 	return (
-		<div className="flex min-h-screen w-full">
+		<div id="mainLayoutWrapper" className="flex min-h-screen w-full">
 			<SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} />
 			<div
+				id="mainLayoutContent"
 				className="flex flex-1 flex-col transition-all duration-300"
 				style={{ width: `calc(100% - ${width}px)` }}
 			>

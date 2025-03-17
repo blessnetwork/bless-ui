@@ -1,1 +1,0 @@
-- [Input](components/input.md)
