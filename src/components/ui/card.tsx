@@ -6,7 +6,7 @@ const CardWrapper = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
 		<div
 			ref={ref}
 			className={cn(
-				'outline-stone-950/5 rounded-xl border bg-card text-card-foreground shadow-sm outline outline-1',
+				'outline-stone-950/5 rounded-xl bg-white text-card-foreground shadow-md outline outline-1',
 				className
 			)}
 			{...props}
@@ -58,7 +58,7 @@ interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> 
 	title?: React.ReactNode
 	description?: React.ReactNode
 	footer?: React.ReactNode
-	height?: string // Add height prop
+	height?: string | number
 }
 
 const Card: React.FC<CardProps> = ({
@@ -74,7 +74,7 @@ const Card: React.FC<CardProps> = ({
 		<CardWrapper
 			className={cn(
 				'w-full flex-1 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]',
-				height && `h-${height}`, // Fix dynamic height syntax
+				height && (typeof height === 'number' ? `h-[${height}px]` : height),
 				className
 			)}
 			{...props}
@@ -102,7 +102,7 @@ const CardAchievement: React.FC<CardProps> = ({
 		<CardWrapper
 			className={cn(
 				'w-full flex-1 sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]',
-				height && `h-${height}`, // Fix dynamic height syntax
+				height && (typeof height === 'number' ? `h-[${height}px]` : height),
 				className
 			)}
 			{...props}
@@ -122,10 +122,9 @@ interface CardData {
 	description: string
 	content: React.ReactNode
 	footer?: React.ReactNode
+	height?: string | number
 }
 
-// Exporting CardAchievement component for use in sections where achievements are displayed.
-// Exporting CardData type to define the structure of card data objects.
 export {
 	CardWrapper,
 	CardHeader,
@@ -133,7 +132,7 @@ export {
 	CardDescription,
 	CardContent,
 	CardFooter,
-	CardAchievement // New export for achievement-specific card
+	CardAchievement
 }
-export type { CardData } // New export for card data structure
+export type { CardData }
 export default Card

@@ -3,8 +3,7 @@ import CardSection, { CardData } from '@/components/ui/card-section'
 
 export interface CardSectionProps {
 	cards: CardData[]
-	cardType?: string // Add cardType as an optional property
-	// other properties
+	cardType?: string
 }
 
 export default function HomePage() {
@@ -83,7 +82,7 @@ export default function HomePage() {
 		<MainLayout>
 			<CardSection cards={section1Cards} cardType="Card" />
 			<CardSection cards={section2Cards} cardType="Card" className="mt-4" />
-			<CardSection cards={section3Cards} cardType="CardAchievement" className="mt-4" />
+			<CardSection cards={section3Cards} cardType="Card" className="mt-4" />
 			<CardSection cards={section4Cards} cardType="Card" className="mt-4" />
 		</MainLayout>
 	)

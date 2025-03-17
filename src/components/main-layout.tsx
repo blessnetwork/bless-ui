@@ -7,8 +7,6 @@ import useSidenav from '@/hooks/useSidenav'
 import { useSidenavStore } from '@/state/useSidenavStore'
 
 const HEADER_HEIGHT = 'h-[74px]'
-const HEADER_BG = 'bg-[#FF8200]'
-const CONTENT_BG = 'bg-[#FFC0CB]'
 
 interface MainLayoutProps {
 	children: React.ReactNode
@@ -26,11 +24,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 				className="flex flex-1 flex-col transition-all duration-300"
 				style={{ width: `calc(100% - ${width}px)` }}
 			>
-				<header className={`flex ${HEADER_HEIGHT} items-center justify-between ${HEADER_BG} p-4`}>
-					<h1 className="text-white font-bold">Bless</h1>
-					<p className="text-white font-bold">Online</p>
+				<header className={`flex ${HEADER_HEIGHT} items-center justify-between p-4 shadow-md`}>
+					<h1 className="font-bold text-black">Bless</h1>
+					<p className="font-bold text-black">Online</p>
 				</header>
-				<main className={`flex-1 ${CONTENT_BG} p-4`}>{children}</main>
+				<main className={`flex-1 p-4`}>{children}</main>
 			</div>
 		</div>
 	)

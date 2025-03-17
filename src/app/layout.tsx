@@ -4,8 +4,9 @@ import '@/styles/globals.css'
 
 const inter = Inter({
 	subsets: ['latin'],
-	weight: ['300', '400', '500', '700'], // Light (300), Regular (400), Medium (500), Bold (700)
-	variable: '--font-inter'
+	weight: ['300', '400', '500', '700'],
+	variable: '--font-inter',
+	display: 'swap'
 })
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={inter.className}>
 			<head />
 			<body className={`${inter.variable} min-h-screen w-full font-sans`}>{children}</body>
 		</html>
