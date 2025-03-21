@@ -1,190 +1,59 @@
-# Bless UI Documentation
+# Bless UI
 
-Welcome to the **Bless UI** documentation! This is a component library designed for React/Next.js applications.
+Reusable UI components for React 18 apps using Tailwind CSS.
 
-> Live Docs: [GitHub Pages](https://your-username.github.io/bless-ui/)
+> 📦 This is the documentation for the **@blessnetwork/bless-ui** NPM module (currently published under @salsaflavio for testing).
 
-## 📦 Installation
+---
 
-### Using Yarn:
+## ✨ Installation
 
-```sh
-yarn add bless-ui
+### With Yarn
+
+```bash
+yarn add @blessnetwork/bless-ui
 ```
 
-### Using npm:
+### With NPM
 
-```sh
-npm install bless-ui
+```bash
+npm install @blessnetwork/bless-ui
 ```
 
-## 🔧 Setup
+---
 
-### Peer Dependencies
+## 🎨 Tailwind Setup
 
-Ensure you have the following dependencies in your project:
+Make sure your Tailwind config includes the module in `content`:
 
-```json
-{
-	"react": "^18.x",
-	"react-dom": "^18.x",
-	"next": "^13 || ^14",
-	"tailwindcss": "^3.x"
-}
-```
-
-If not, install them:
-
-```sh
-yarn add react react-dom next tailwindcss
-```
-
-### TailwindCSS Setup
-
-Add the paths in your `tailwind.config.ts`:
-
-```ts
+```js
+// tailwind.config.js
 module.exports = {
-	content: ['./node_modules/bless-ui/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
-	theme: { extend: {} },
+	content: [
+		'./src/**/*.{js,ts,jsx,tsx}',
+		'./node_modules/@blessnetwork/bless-ui/**/*.{js,ts,jsx,tsx}'
+	],
+	theme: {
+		extend: {}
+	},
 	plugins: []
 }
 ```
 
-Import styles in `app/globals.css`:
+---
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+## 📚 Usage Example
+
+```tsx
+import { Button } from '@blessnetwork/bless-ui'
+
+export default function Example() {
+	return <Button className="bg-blue-600 text-white">Click Me</Button>
+}
 ```
 
 ---
 
-## 📚 Components
+## 📖 Explore Components
 
-Each component in `bless-ui` can be imported individually:
-
-```tsx
-import { Button, Card, Input, MainLayout, Popover, SideNav } from 'bless-ui'
-```
-
-### **MainLayout**
-
-```tsx
-import { MainLayout } from 'bless-ui'
-
-export default function Page() {
-	return (
-		<MainLayout>
-			<h1 className="text-xl font-bold">Dashboard</h1>
-		</MainLayout>
-	)
-}
-```
-
-### **SideNav**
-
-```tsx
-import { menuItems, menuItemsFooter } from '@/constants/menu-items'
-import { SideNav } from 'bless-ui'
-
-;<SideNav menuItems={menuItems} menuItemsFooter={menuItemsFooter} />
-```
-
-### **Button**
-
-```tsx
-import { Button } from 'bless-ui'
-
-;<Button onClick={() => alert('Clicked!')}>Click Me</Button>
-```
-
-### **Input**
-
-```tsx
-import { Input } from 'bless-ui'
-
-;<Input placeholder="Enter your email" />
-```
-
-### **Popover**
-
-```tsx
-import { Popover } from 'bless-ui'
-
-;<Popover label="Tooltip content" show>
-	<button>Hover me</button>
-</Popover>
-```
-
-### **CardSection**
-
-```tsx
-import { CardSection } from 'bless-ui'
-
-const cards = [
-  {
-    title: 'Card Title',
-    description: 'Card Description',
-    content: 'Main content here',
-    footer: <p>Footer content</p>
-  }
-]
-
-<CardSection cards={cards} cardType="Card" />
-```
-
-### **Icons**
-
-```tsx
-import { Icons } from 'bless-ui'
-
-;<Icons.HomeIcon className="h-6 w-6 text-black" />
-```
-
-### **Chart Components**
-
-```tsx
-import {
-  ChartContainer,
-  ChartLegend,
-  ChartTooltip
-} from 'bless-ui'
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts'
-
-const chartData = [
-  { day: 'Mon', 'Bonus Time': 30, 'Base Time': 70 }
-]
-
-const chartConfig = {
-  'Bonus Time': { color: '#16463d' },
-  'Base Time': { color: '#8dd081' }
-}
-
-<ChartContainer config={chartConfig}>
-  <ResponsiveContainer width="100%" height={300}>
-    <BarChart data={chartData}>
-      <XAxis dataKey="day" />
-      <YAxis />
-      <ChartTooltip />
-      <ChartLegend />
-      <Bar dataKey="Bonus Time" stackId="a" fill="#16463d" />
-      <Bar dataKey="Base Time" stackId="a" fill="#8dd081" />
-    </BarChart>
-  </ResponsiveContainer>
-</ChartContainer>
-```
-
----
-
-## 🚀 Deployment with GitHub Pages
-
-To host these docs using **Docsify**:
-
-1. Ensure your repo has a `/docs` folder.
-2. Enable GitHub Pages in **Settings > Pages**.
-3. Your documentation will be live at:
-   ```
-   https://your-username.github.io/bless-ui/
-   ```
+Use the sidebar to browse documentation for all components.

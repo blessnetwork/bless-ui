@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import {
 	AirdropsIcon,
 	DocumentationIcon,
@@ -10,7 +11,7 @@ import {
 	ReferralsIcon,
 	SettingsIcon,
 	StakingIcon
-} from '@/components/ui/icons'
+} from '../components/ui/icons'
 
 const iconClasses = (isActive: boolean) => {
 	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-white' : 'text-gray-400'}`
