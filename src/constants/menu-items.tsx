@@ -7,14 +7,14 @@ import {
 	HomeIcon,
 	LogoutIcon,
 	MyNodesIcon,
-	OrchestrationIcon,
+	OrchestrationNodeIcon,
 	ReferralsIcon,
 	SettingsIcon,
 	StakingIcon
 } from '../components/ui/icons'
 
 const iconClasses = (isActive: boolean) => {
-	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-white' : 'text-gray-400'}`
+	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-black' : 'text-gray-400'}`
 }
 
 const menuItems = [
@@ -22,6 +22,11 @@ const menuItems = [
 		label: 'Home',
 		path: '/',
 		icon: (isActive: boolean) => <HomeIcon className={iconClasses(isActive)} />
+	},
+	{
+		label: 'Bar Chart',
+		path: '/bar-chart',
+		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
 	},
 	{
 		label: 'My Nodes',
@@ -40,13 +45,13 @@ const menuItems = [
 	},
 	{
 		label: 'Orchestration Node',
-		path: '/orchestration',
-		icon: (isActive: boolean) => <OrchestrationIcon className={iconClasses(isActive)} />
+		path: '/orchestration-node',
+		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
 	},
 	{
-		label: 'Components',
-		path: '/components',
-		icon: (isActive: boolean) => <OrchestrationIcon className={iconClasses(isActive)} />
+		label: 'Bar Chart',
+		path: '/bar-chart',
+		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
 	}
 ]
 

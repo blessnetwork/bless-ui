@@ -5,7 +5,7 @@
 		"declaration": true,
 		"declarationDir": "dist",
 		"outDir": "dist",
-		"jsx": "react",
+		"jsx": "preserve",
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"allowSyntheticDefaultImports": true,
@@ -14,7 +14,19 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		}
+		},
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"allowJs": true,
+		"noEmit": true,
+		"incremental": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
-	"include": ["src", "index.ts"]
+	"include": ["src", "index.ts", ".next/types/**/*.ts"],
+	"exclude": ["node_modules"]
 }
