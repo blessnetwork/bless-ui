@@ -1,5 +1,5 @@
 {
-	"name": "@salsaflavio/bless-ui",
+	"name": "@blessnetwork/bless-ui",
 	"version": "1.0.8",
 	"type": "module",
 	"main": "dist/index.js",
