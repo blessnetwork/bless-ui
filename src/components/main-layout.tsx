@@ -35,3 +35,4 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 }
 
 export { MainLayout }
+export default MainLayout

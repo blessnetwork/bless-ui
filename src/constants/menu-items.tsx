@@ -1,5 +1,4 @@
-'use client'
-
+import React from 'react'
 import {
 	AirdropsIcon,
 	DocumentationIcon,
@@ -11,6 +10,8 @@ import {
 	SettingsIcon,
 	StakingIcon
 } from '@/components/ui/icons'
+
+;('use client')
 
 const iconClasses = (isActive: boolean) => {
 	return `w-[18px] h-[18px] text-[13px] ${
