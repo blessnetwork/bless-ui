@@ -1,3 +1,4 @@
+import React from 'react'
 import { MainLayout } from '@/components/main-layout'
 import CardSection, { CardData } from '@/components/ui/card-section'
 

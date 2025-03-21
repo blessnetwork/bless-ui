@@ -1,6 +1,7 @@
-'use client'
-
+import React from 'react'
 import { MainLayout } from '@/components/main-layout'
+
+;('use client')
 
 export default function LogoutPage() {
 	return (
