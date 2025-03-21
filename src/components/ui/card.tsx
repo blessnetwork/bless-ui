@@ -117,14 +117,6 @@ const CardAchievement: React.FC<CardProps> = ({
 	)
 }
 
-interface CardData {
-	title: string
-	description: string
-	content: React.ReactNode
-	footer?: React.ReactNode
-	height?: string | number
-}
-
 export {
 	CardWrapper,
 	CardHeader,
@@ -134,5 +126,4 @@ export {
 	CardFooter,
 	CardAchievement
 }
-export type { CardData }
 export default Card

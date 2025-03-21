@@ -1,8 +1,4 @@
-'use client'
-
 import React from 'react'
-import { MainLayout } from '@/components/main-layout'
-import { CardWrapper } from '@/components/ui/card'
 import { ChartContainer } from '@/components/ui/chart'
 import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
@@ -28,31 +24,29 @@ const chartData = [
 
 // Chart Configuration
 const chartConfig = {
-	// 'Referral Time': { color: '#c3bef7' }, // Blue (Bottom)
-	'Referral Time': { color: '#FFFFFF' }, // Blue (Bottom)
-	'Bonus Time': { color: '#16463d' }, //
-	'Base Time': { color: '#8dd081' } // Red (Top)
+	'Referral Time': { color: '#FFFFFF' }, // White
+	'Bonus Time': { color: '#16463d' }, // Greenish
+	'Base Time': { color: '#8dd081' } // Light Green
 }
 
-export default function MyNodesPage() {
+const ChartBar: React.FC = () => {
 	return (
-		<MainLayout>
-			{/* Chart Section */}
-			<CardWrapper className="mt-6 w-full max-w-4xl">
-				<ChartContainer config={chartConfig}>
-					<ResponsiveContainer width="100%" height={368}>
-						<BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
-							<XAxis dataKey="day" />
-							<YAxis />
-							<Tooltip />
-							<Legend />
-							<Bar dataKey="Base Time" stackId="a" fill="#c3bef7" />
-							<Bar dataKey="Bonus Time" stackId="a" fill="#16463d" />
-							<Bar dataKey="Referral Time" stackId="a" fill="#8dd081" />
-						</BarChart>
-					</ResponsiveContainer>
-				</ChartContainer>
-			</CardWrapper>
-		</MainLayout>
+		<div className="mt-6 w-full max-w-4xl">
+			<ChartContainer config={chartConfig}>
+				<ResponsiveContainer width="100%" height={400}>
+					<BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 5 }}>
+						<XAxis dataKey="day" />
+						<YAxis />
+						<Tooltip />
+						<Legend />
+						<Bar dataKey="Base Time" stackId="a" fill="#8dd081" />
+						<Bar dataKey="Bonus Time" stackId="a" fill="#16463d" />
+						<Bar dataKey="Referral Time" stackId="a" fill="#FFFFFF" />
+					</BarChart>
+				</ResponsiveContainer>
+			</ChartContainer>
+		</div>
 	)
 }
+
+export default ChartBar
