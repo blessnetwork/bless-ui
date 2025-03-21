@@ -17,7 +17,8 @@
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
 		"build:lib": "rollup -c",
-		"prepublishOnly": "npm run build:lib"
+		"prepublishOnly": "npm run build:lib",
+		"tree": "zsh -i -c tree_me"
 	},
 	"dependencies": {
 		"@gem-mine/docsify-react-live": "^1.7.1",

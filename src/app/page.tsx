@@ -1,4 +1,4 @@
-import MainLayout from '@/components/main-layout'
+import { MainLayout } from '@/components/main-layout'
 import CardSection, { CardData } from '@/components/ui/card-section'
 
 export interface CardSectionProps {

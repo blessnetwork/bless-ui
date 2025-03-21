@@ -1,16 +1,10 @@
 'use client'
 
 import React from 'react'
-import MainLayout from '@/components/main-layout'
+import { MainLayout } from '@/components/main-layout'
 import { CardWrapper } from '@/components/ui/card'
-import CardSection, { CardData } from '@/components/ui/card-section'
 import { ChartContainer } from '@/components/ui/chart'
 import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
-
-export interface CardSectionProps {
-	cards: CardData[]
-	cardType?: string
-}
 
 // Static JSON Data
 const chartData = [
