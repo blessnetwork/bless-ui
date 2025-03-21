@@ -6,7 +6,7 @@ interface PopoverProps {
 	show?: boolean
 }
 
-const Popover: React.FC<PopoverProps> = ({ label, children, show = false }) => {
+export const Popover: React.FC<PopoverProps> = ({ label, children, show = false }) => {
 	return (
 		<div className="group relative">
 			{children}
@@ -18,5 +18,3 @@ const Popover: React.FC<PopoverProps> = ({ label, children, show = false }) => {
 		</div>
 	)
 }
-
-export default Popover

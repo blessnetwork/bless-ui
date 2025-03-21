@@ -5,7 +5,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string
 }
 
-const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
+export const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) => {
 	return React.createElement(
 		'button',
 		{
@@ -15,5 +15,3 @@ const Button: React.FC<ButtonProps> = ({ children, className = '', ...props }) =
 		children
 	)
 }
-
-export default Button

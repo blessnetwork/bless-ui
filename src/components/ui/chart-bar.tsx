@@ -31,7 +31,7 @@ const chartConfig = {
 	'Base Time': { color: '#8dd081' } // Light Green
 }
 
-const ChartBar: React.FC = () => {
+export const ChartBar: React.FC = () => {
 	return (
 		<div className="mt-6 w-full max-w-4xl">
 			<ChartContainer config={chartConfig}>
@@ -50,5 +50,3 @@ const ChartBar: React.FC = () => {
 		</div>
 	)
 }
-
-export default ChartBar

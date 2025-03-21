@@ -14,7 +14,7 @@ interface CardSectionProps {
 	className?: string
 }
 
-const CardSection: React.FC<CardSectionProps> = ({ cards, cardType, className = '' }) => {
+export const CardSection: React.FC<CardSectionProps> = ({ cards, cardType, className = '' }) => {
 	const gridClass =
 		cards.length === 1 ? 'w-full' : cards.length === 2 ? 'sm:w-1/2' : 'sm:w-1/3 lg:w-1/4'
 
@@ -36,5 +36,3 @@ const CardSection: React.FC<CardSectionProps> = ({ cards, cardType, className = 
 		</div>
 	)
 }
-
-export default CardSection
