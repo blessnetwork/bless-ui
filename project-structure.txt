@@ -10,8 +10,9 @@
 ├── next-env.d.ts
 ├── next.config.mjs
 ├── notes.md
+├── package-lock.json
 ├── package.json
-├── postcss.config.mjs
+├── postcss.config.cjs
 ├── project-files.txt
 ├── project-structure.txt
 ├── public
@@ -22,6 +23,8 @@
 │   ├── README.md
 │   ├── app
 │   │   ├── airdrops
+│   │   │   └── page.tsx
+│   │   ├── components
 │   │   │   └── page.tsx
 │   │   ├── documentation
 │   │   │   └── page.tsx
@@ -51,7 +54,6 @@
 │   │       ├── header-mobile.tsx
 │   │       ├── header.tsx
 │   │       ├── icons.tsx
-│   │       ├── index.ts
 │   │       ├── input.tsx
 │   │       ├── popover.tsx
 │   │       └── side-nav.tsx
@@ -65,7 +67,9 @@
 │   ├── state
 │   │   └── useSidenavStore.ts
 │   └── styles
-│       └── globals.css
+│       ├── globals.css
+│       └── tailwind.css
+├── tailwind.config.js
 ├── tailwind.config.ts
 ├── temp
 │   ├── alias.md
@@ -83,4 +87,4 @@
 ├── tsup.config.ts
 └── yarn.lock
 
-24 directories, 60 files
+25 directories, 63 files

@@ -1,22 +1,19 @@
-import React from 'react'
+'use client'
+
 import {
 	AirdropsIcon,
 	DocumentationIcon,
 	HomeIcon,
 	LogoutIcon,
 	MyNodesIcon,
-	OrchestrationNodeIcon,
+	OrchestrationIcon,
 	ReferralsIcon,
 	SettingsIcon,
 	StakingIcon
 } from '@/components/ui/icons'
 
-;('use client')
-
 const iconClasses = (isActive: boolean) => {
-	return `w-[18px] h-[18px] text-[13px] ${
-		isActive ? 'text-black' : 'text-[#A0A2A0] group-hover:text-black'
-	}`
+	return `w-[18px] h-[18px] text-[13px] ${isActive ? 'text-white' : 'text-gray-400'}`
 }
 
 const menuItems = [
@@ -43,7 +40,12 @@ const menuItems = [
 	{
 		label: 'Orchestration Node',
 		path: '/orchestration',
-		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
+		icon: (isActive: boolean) => <OrchestrationIcon className={iconClasses(isActive)} />
+	},
+	{
+		label: 'Components',
+		path: '/components',
+		icon: (isActive: boolean) => <OrchestrationIcon className={iconClasses(isActive)} />
 	}
 ]
 
