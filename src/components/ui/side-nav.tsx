@@ -57,12 +57,12 @@ const SideNav: React.FC<SideNavProps> = ({ menuItems, menuItemsFooter }) => {
 	return (
 		<nav
 			id="sidenav"
-			className="bg-background-sidenav flex min-h-screen flex-col transition-all duration-300"
+			className="flex min-h-screen flex-col bg-background-sidenav transition-all duration-300"
 			style={{ width }}
 		>
 			<header
 				id="sidebar_header"
-				className="flex h-[74px] items-center bg-gray-300 px-4 py-3 shadow-md"
+				className="bg-gray-300 flex h-[74px] items-center px-4 py-3 shadow-md"
 			>
 				<div
 					className={`transition-opacity duration-300 ${
