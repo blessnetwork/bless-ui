@@ -19,6 +19,24 @@ It includes:
 
 ---
 
+## Run locally
+
+Install dependencies:
+
+```bash
+yarn install
+```
+
+Run project:
+
+```bash
+yarn dev
+```
+
+Navigate to a [http:localhost:3000](http:localhost:3000)
+
+---
+
 ## 📦 Installation
 
 ### Yarn
