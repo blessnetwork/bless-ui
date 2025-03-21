@@ -117,6 +117,8 @@ export default function Page() {
 
 ---
 
+# Using @blessnetwork/bless-ui in your project
+
 ## 📦 Installation
 
 ### Yarn
