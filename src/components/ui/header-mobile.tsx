@@ -13,3 +13,5 @@ export default function HeaderMobile() {
 		</header>
 	)
 }
+
+export { HeaderMobile }

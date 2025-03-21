@@ -6,7 +6,7 @@ const CardWrapper = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
 		<div
 			ref={ref}
 			className={cn(
-				'outline-stone-950/5 rounded-xl bg-white text-card-foreground shadow-md outline outline-1',
+				'text-card-foreground rounded-xl bg-white shadow-md outline outline-1 outline-stone-950/5',
 				className
 			)}
 			{...props}
@@ -35,7 +35,7 @@ CardTitle.displayName = 'CardTitle'
 
 const CardDescription = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
 	({ className, ...props }, ref) => (
-		<div ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
+		<div ref={ref} className={cn('text-muted-foreground text-sm', className)} {...props} />
 	)
 )
 CardDescription.displayName = 'CardDescription'
@@ -61,7 +61,7 @@ interface CardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> 
 	height?: string | number
 }
 
-const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps> = ({
 	className,
 	title,
 	description,

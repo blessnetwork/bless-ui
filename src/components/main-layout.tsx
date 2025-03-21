@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react'
-import SideNav from '@/components/ui/side-nav'
-import { menuItems, menuItemsFooter } from '@/constants/menu-items'
-import useSidenav from '@/hooks/useSidenav'
-import { useSidenavStore } from '@/state/useSidenavStore'
+import { menuItems, menuItemsFooter } from '../constants/menu-items'
+import useSidenav from '../hooks/useSidenav'
+import { useSidenavStore } from '../state/useSidenavStore'
+import SideNav from './ui/side-nav'
 
 const HEADER_HEIGHT = 'h-[74px]'
 
@@ -35,3 +35,4 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 }
 
 export { MainLayout }
+export default MainLayout

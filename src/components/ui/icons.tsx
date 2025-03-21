@@ -148,7 +148,7 @@ const AirdropsIcon: React.FC<IconProps> = ({ className = '' }) => (
 	</svg>
 )
 
-const OrchestrationNodeIcon: React.FC<IconProps> = ({ className = '' }) => (
+const OrchestrationIcon: React.FC<IconProps> = ({ className = '' }) => (
 	<svg
 		width="18"
 		height="18"
@@ -398,7 +398,7 @@ export {
 	MyNodesIcon,
 	StakingIcon,
 	AirdropsIcon,
-	OrchestrationNodeIcon,
+	OrchestrationIcon,
 	SettingsIcon,
 	ReferralsIcon,
 	DocumentationIcon,
