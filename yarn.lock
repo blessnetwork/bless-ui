@@ -1425,15 +1425,6 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.36.0.tgz#88b23fe29d28fa647030b36e912c1b5b50831b1d"
   integrity sha512-aRXd7tRZkWLqGbChgcMMDEHjOKudo1kChb1Jt1IfR8cY/KIpgNviLeJy5FUb9IpSuQj8dU2fAYNMPW/hLKOSTw==
 
-"@salsaflavio/my-ui-components@^2.0.7":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@salsaflavio/my-ui-components/-/my-ui-components-2.0.7.tgz#210041c123166e0a89dbb1cc41c4ce9a9478fcf5"
-  integrity sha512-X/wmNE2r8p1J4dAhPCYpviLz2klguCPASSY0+ar32iUFNnyXFi1HFtEgpnvYLTNVcLf02igC3hdNn40uG4y1gQ==
-  dependencies:
-    react "^18.2.0"
-    react-dom "^18.2.0"
-    recharts "^2.15.1"
-
 "@stackblitz/sdk@^1.11.0":
   version "1.11.0"
   resolved "https://registry.npmjs.org/@stackblitz/sdk/-/sdk-1.11.0.tgz"
@@ -2918,7 +2909,7 @@ react-dom@^16.7.0:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-dom@^18, react-dom@^18.2.0:
+react-dom@^18:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz"
   integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
@@ -3008,7 +2999,7 @@ react@^16.7.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
 
-react@^18, react@^18.2.0:
+react@^18:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react/-/react-18.3.1.tgz"
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
@@ -3450,10 +3441,10 @@ tsup@^8.4.0:
     tinyglobby "^0.2.11"
     tree-kill "^1.2.2"
 
-typescript@^5:
-  version "5.6.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-5.6.3.tgz"
-  integrity sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==
+typescript@^5.8.2:
+  version "5.8.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.2.tgz#8170b3702f74b79db2e5a96207c15e65807999e4"
+  integrity sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==
 
 undici-types@~6.19.2:
   version "6.19.8"
