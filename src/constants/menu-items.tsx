@@ -47,11 +47,6 @@ const menuItems = [
 		label: 'Orchestration Node',
 		path: '/orchestration-node',
 		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
-	},
-	{
-		label: 'Bar Chart',
-		path: '/bar-chart',
-		icon: (isActive: boolean) => <OrchestrationNodeIcon className={iconClasses(isActive)} />
 	}
 ]
 

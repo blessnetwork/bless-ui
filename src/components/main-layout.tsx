@@ -1,10 +1,11 @@
 'use client'
 
 import React from 'react'
-import { menuItems, menuItemsFooter } from '../constants/menu-items'
-import useSidenav from '../hooks/useSidenav'
-import { useSidenavStore } from '../state/useSidenavStore'
-import SideNav from './ui/side-nav'
+import { Header } from '@/components/ui/header'
+import SideNav from '@/components/ui/side-nav'
+import { menuItems, menuItemsFooter } from '@/constants/menu-items'
+import useSidenav from '@/hooks/useSidenav'
+import { useSidenavStore } from '@/state/useSidenavStore'
 
 const HEADER_HEIGHT = 'h-[74px]'
 
@@ -24,10 +25,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 				className="flex flex-1 flex-col transition-all duration-300"
 				style={{ width: `calc(100% - ${width}px)` }}
 			>
-				<header className={`flex ${HEADER_HEIGHT} items-center justify-between p-4 shadow-md`}>
-					<h1 className="font-bold text-black">Bless</h1>
-					<p className="font-bold text-black">Online</p>
-				</header>
+				<Header height={HEADER_HEIGHT} />
 				<main className={`flex-1 p-4`}>{children}</main>
 			</div>
 		</div>
