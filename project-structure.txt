@@ -1,0 +1,82 @@
+.
+├── README.md
+├── Users
+│   └── flavio
+├── components.json
+├── docs
+│   ├── card-section.md
+│   ├── card.md
+│   └── getting-started.md
+├── next-env.d.ts
+├── next.config.mjs
+├── package.json
+├── postcss.config.mjs
+├── project-structure.txt
+├── public
+│   ├── chart.jpg
+│   ├── chart.png
+│   └── chart.svg
+├── rollup-plugin-use-client.js
+├── rollup.config.js
+├── src
+│   ├── README.md
+│   ├── app
+│   │   ├── airdrops
+│   │   │   └── page.tsx
+│   │   ├── documentation
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── layout.tsx
+│   │   ├── logout
+│   │   │   └── page.tsx
+│   │   ├── my-nodes
+│   │   │   └── page.tsx
+│   │   ├── orchestration
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   ├── referrals
+│   │   │   └── page.tsx
+│   │   ├── settings
+│   │   │   └── page.tsx
+│   │   └── staking
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── main-layout.tsx
+│   │   └── ui
+│   │       ├── button.tsx
+│   │       ├── card-section.tsx
+│   │       ├── card.tsx
+│   │       ├── chart-bar.tsx
+│   │       ├── chart.tsx
+│   │       ├── header-mobile.tsx
+│   │       ├── header.tsx
+│   │       ├── icons.tsx
+│   │       ├── index.ts
+│   │       ├── input.tsx
+│   │       ├── popover.tsx
+│   │       └── side-nav.tsx
+│   ├── constants
+│   │   └── menu-items.tsx
+│   ├── hooks
+│   │   └── useSidenav.ts
+│   ├── index.ts
+│   ├── lib
+│   │   └── utils.ts
+│   ├── state
+│   │   └── useSidenavStore.ts
+│   └── styles
+│       └── globals.css
+├── tailwind.config.ts
+├── temp
+│   ├── alias.md
+│   ├── calcTime.ts
+│   ├── git-log.sh
+│   ├── git.md
+│   ├── github-org-all-commits-last-32-days.csv
+│   └── github-repos-last-32-days.csv
+├── temp.html
+├── tsconfig.json
+├── tsconfig.tsbuildinfo
+└── yarn.lock
+
+23 directories, 57 files
