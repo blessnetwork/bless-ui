@@ -35,6 +35,8 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+![/public/Macbook-Pro-16-1727.998046875x1116.9921875.png](/public/Macbook-Pro-16-1727.998046875x1116.9921875.png)
+
 ---
 
 ## 🧩 Main Layout, Side Nav, and Menu Items
