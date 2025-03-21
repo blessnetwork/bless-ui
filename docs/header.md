@@ -7,5 +7,5 @@ Top navigation bar component.
 ```tsx
 import { Header } from '@blessnetwork/bless-ui'
 
-;<Header />
+<Header />
 ```

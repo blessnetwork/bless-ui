@@ -11,5 +11,5 @@ All props from `React.InputHTMLAttributes<HTMLInputElement>`
 ```tsx
 import { Input } from '@blessnetwork/bless-ui'
 
-;<Input placeholder="Your text here..." />
+<Input placeholder="Your text here..." />
 ```

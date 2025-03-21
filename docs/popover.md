@@ -15,7 +15,7 @@ Simple tooltip-like hover popup.
 ```tsx
 import { Popover } from '@blessnetwork/bless-ui'
 
-;<Popover label="Click me">
+<Popover label="Click me">
 	<button>Hover or focus me</button>
 </Popover>
 ```

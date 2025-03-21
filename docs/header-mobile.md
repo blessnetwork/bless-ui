@@ -7,5 +7,5 @@ Mobile header variation with logo and menu button.
 ```tsx
 import { HeaderMobile } from '@blessnetwork/bless-ui'
 
-;<HeaderMobile />
+<HeaderMobile />
 ```

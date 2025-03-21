@@ -26,7 +26,7 @@ A flexible card layout component with slots for title, description, content, and
 ```tsx
 import { Card } from '@blessnetwork/bless-ui'
 
-;<Card title="Title" description="Subtitle" footer={<span>Footer</span>}>
+<Card title="Title" description="Subtitle" footer={<span>Footer</span>}>
 	Card content here.
 </Card>
 ```

@@ -15,7 +15,7 @@ Renders up to 4 `Card` or `CardAchievement` components in a responsive grid layo
 ```tsx
 import { CardSection } from '@blessnetwork/bless-ui'
 
-;<CardSection
+<CardSection
 	cardType="Card"
 	cards={[
 		{

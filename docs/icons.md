@@ -19,5 +19,5 @@ import {
 	StakingIcon
 } from '@blessnetwork/bless-ui'
 
-;<HomeIcon className="text-gray-600 h-6 w-6" />
+<HomeIcon className="text-gray-600 h-6 w-6" />
 ```
