@@ -2,7 +2,7 @@
 
 Reusable UI components for React 18 apps using Tailwind CSS.
 
-> 📦 This is the documentation for the **@blessnetwork/bless-ui** NPM module (currently published under @salsaflavio for testing).
+> 📦 This is the documentation for the **@blessnetwork/bless-ui** NPM module.
 
 ---
 
